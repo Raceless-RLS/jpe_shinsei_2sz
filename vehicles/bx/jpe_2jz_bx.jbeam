@@ -339,7 +339,7 @@
     "slotType" : "jpe_2jz_engine_cover",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["jpe_2jz_engine_cover", ["bx_engine"]],
+        ["jpe_2jz_engine_cover_c", ["bx_engine"]],
         {"deformGroup":""},
     ],
 },
@@ -352,7 +352,7 @@
     "slotType" : "jpe_2jz_engine_cover",
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["jpe_2jz_engine_cover_cut", ["bx_engine"]],
+        ["jpe_2jz_engine_cover_cut_c", ["bx_engine"]],
         {"deformGroup":""},
     ],
 },

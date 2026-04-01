@@ -1,0 +1,114 @@
+{
+"jpe_2jz_ecu_stock": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Stock Shinsei ECU (7000RPM)",
+        "value":500,
+    },
+    "slotType" : "jpe_2jz_ecu",
+    "mainEngine":{
+        "revLimiterRPM":7100,
+        "revLimiterType":"timeBased",
+        "revLimiterCutTime":0.11,
+    },
+},
+"jpe_2jz_ecu_sport": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Stage 1 Tuned Shinsei ECU (7500RPM)",
+        "value":750,
+    },
+    "slotType" : "jpe_2jz_ecu",
+    "controller": [
+        ["fileName"],
+        ["twoStepLaunch", {"rpmLimit":2500}],
+    ],	
+    "mainEngine":{
+        "revLimiterRPM":7500,
+        "revLimiterType":"timeBased",
+        "revLimiterCutTime":0.10,
+        "$*instantAfterFireCoef": 1.10,
+        "$*sustainedAfterFireCoef": 1.05,		
+
+		//flames
+		"particulates":0.01,
+		"exhaustFlameSizeCoef":1.5,
+		"exhaustFlameColorCoef":1.25,			
+    },
+    "vehicleController": {
+        "highShiftUpRPM":"$=$revLimiterRPM - 200",
+    },
+},
+"jpe_2jz_ecu_gtz": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Stage 2 Tuned Shinsei ECU (8000RPM)",
+        "value":1000,
+    },
+    "slotType" : "jpe_2jz_ecu",
+    "controller": [
+        ["fileName"],
+        ["twoStepLaunch", {"rpmLimit":2750}],
+    ],	
+    "mainEngine":{
+        "$+idleRPM":50,
+        "revLimiterRPM":8000,
+        "revLimiterType":"timeBased",
+        "revLimiterCutTime":0.095,
+        "$*instantAfterFireCoef": 1.15,
+        "$*sustainedAfterFireCoef": 1.075,		
+
+		//flames
+		"particulates":0.0125,
+		"exhaustFlameSizeCoef":1.75,
+		"exhaustFlameColorCoef":1.25,			
+    },
+    "vehicleController": {
+        "highShiftUpRPM":"$=$revLimiterRPM - 200",
+    },
+},
+"jpe_2jz_ecu_race": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"BeamTech Stand-Alone ECU (ADJ RPM)",
+        "value":2000,
+    },
+    "slotType" : "jpe_2jz_ecu",
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$revLimiterRPM", "range", "rpm", "Engine", 8000, 5500, 10000, "RPM Limit", "RPM where the rev limiter prevents further revving", {"stepDis":50}],
+        ["$revLimiterCutTime", "range", "s", "Engine", 0.095, 0.01, 0.5, "RPM Limit Cut Time", "How fast the rev limiter cycles", {"stepDis":0.001}],
+        ["$instantAfterFireCoef", "range", "p", "BackFire", 1.50, 0.0, 5, "Instant AfterFire Coef", "Instant Afterfire (Backfire/2Step)", {"stepDis":0.005}],
+        ["$sustainedAfterFireCoef", "range", "p", "BackFire", 0.875, 0.0, 5, "Sustained AfterFire Coef", "Sustained AfterFire (Burble/Decel)", {"stepDis":0.005}],
+        ["$instantAfterFireVolumeCoef", "range", "p", "BackFire", 1.0, 0.0, 5, "Instant AfterFire Volume Coef", "Instant AfterFire Volume (Backfire/2Step)", {"stepDis":0.005}],
+        ["$sustainedAfterFireVolumeCoef", "range", "p", "BackFire", 0.50, 0.0, 5, "Sustained AfterFire Volume Coef", "Sustained AfterFire Volume (Burble/Decel)", {"stepDis":0.005}],
+        ["$shiftAfterFireCoef", "range", "p", "BackFire", 2.25, 0.0, 5, "Shift AfterFire Coef", "Shift AfterFire", {"stepDis":0.005}],
+        ["$shiftAfterFireVolumeCoef", "range", "p", "BackFire", 1.5, 0.0, 5, "Shift AfterFire Coef", "Shift AfterFire Volume", {"stepDis":0.005}],
+    ],
+    "controller": [
+        ["fileName"],
+        ["twoStepLaunch", {"rpmLimit":3200}],
+    ],
+    "mainEngine":{
+        "$+idleRPM":75,
+        "revLimiterRPM":"$revLimiterRPM",
+        "revLimiterType":"timeBased",
+        "revLimiterCutTime":"$revLimiterCutTime",
+        "instantAfterFireCoef": "$instantAfterFireCoef",								
+        "instantAfterFireVolumeCoef": "$instantAfterVolumeCoef",								
+        "sustainedAfterFireCoef": "$sustainedAfterFireCoef",								
+        "sustainedAfterFireVolumeCoef": "$sustainedAfterFireVolumeCoef",								
+        "shiftAfterFireCoef": "$shiftAfterFireCoef",								
+        "shiftAfterFireVolumeCoef": "$shiftAfterFireVolumeCoef",	
+
+		//flames
+		"particulates":0.015,
+		"exhaustFlameSizeCoef":1000,
+		"exhaustFlameVelocityCoef":1000,
+		"exhaustFlameColorCoef":1000.25,			
+    },
+    "vehicleController": {
+        "highShiftUpRPM":"$=$revLimiterRPM - 200",
+    },
+},
+}

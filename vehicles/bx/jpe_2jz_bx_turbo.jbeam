@@ -1,0 +1,869 @@
+{
+"jpe_2jz_turbo_stock": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Stock Shinsei Twin Turbochargers",
+        "value":500,
+    },
+    "slotType" : "jpe_2jz_turbo",
+    "turbocharger": {
+        "bovSoundFileName":"event:>Vehicle>Forced_Induction>Turbo_07>turbo_bov_race",
+        "hissLoopEvent":"event:>Vehicle>Forced_Induction>Turbo_07>turbo_hiss_race",
+        "whineLoopEvent":"event:>Vehicle>Forced_Induction>Turbo_07>turbo_spin_race",
+        "turboSizeCoef": 0.75,
+        "bovSoundVolumeCoef": 0.575,
+        "hissVolumePerPSI": 0.07,
+        "whineVolumePer10kRPM": 0.115,
+        "whinePitchPer10kRPM": 0.075,
+        "wastegateStart":9.5,
+        "wastegateLimit":11.0,
+        "maxExhaustPower": 10000,
+        "backPressureCoef": 0.000035,
+        "frictionCoef": 10.4,
+        "inertia":4,
+        "damageThresholdTemperature": 750,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+			[0,      -3.5],
+			[20000,  -0.5],
+			[40000,   4],
+			[70000,  10],
+			[90000,  13],
+			[120000, 14],
+			[160000, 14.5],
+			[200000, 15],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+			[0,     0.0, 0.0],
+			[1000,  0.35,0.30],
+			[2000,  0.65,0.55],
+			[3000,  0.88,0.75],
+			[3500,  0.95,0.92],  
+			[4500,  0.98,0.96],
+			[5500,  0.97,0.96],
+			[6500,  0.95,0.94],
+			[7300,  0.90,0.92],
+			[8000,  0.88,0.90],
+			[9000,  0.88,0.88],
+			[10000,  0.80,0.88],
+        ],
+    },
+    "mainEngine":{
+         "torqueModIntake":[
+            ["rpm", "torque"],
+            [0,      10],
+            [2000,  20],
+            [3000,  22],
+            [4000,  35],
+            [5000,  45],
+            [6000,  24],
+            [7000,   18],
+            [8000,  14],
+            [9000,  12],
+            [10000,  10],
+        ],
+        //turbocharger name
+        "turbocharger":"turbocharger",
+        //turbocharger deform groups
+        "deformGroups_turbo":["mainEngine_turbo","mainEngine_intercooler","mainEngine_piping"]
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["jpe_2jz_intake_manifold", ["bx_engine"]],
+        ["jpe_2jz_CAIK&N", ["bx_engine"]],
+        ["jpe_2jz_exhaust_header", ["bx_engine", "bx_turbo", "bx_header"]],
+        ["jpe_2jz_intercooler", ["bx_radiator","bx_intercooler"]],
+        {"deformGroup":"mainEngine_piping", "deformMaterialBase":"generic_perf_parts", "deformMaterialDamaged":"invis"},
+        ["jpe_2jz_ic_pipes", ["bx_engine","bx_radiator"]],
+        {"deformGroup":""},
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":false},
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+
+         //turbo/downpipe
+         {"group":"bx_turbo"},
+         {"nodeWeight":7},
+         ["trb1", 0.247, -1.263, 0.486],
+         ["exm1r", 0.247, -1.048, 0.486],
+         {"nodeWeight":2.0},
+         {"group":"bx_header"},
+         ["exm2r", -0.243, -1.03, 0.32, {"afterFireAudioCoef":1.0, "afterFireVisualCoef":1.0, "afterFireVolumeCoef":1.0, "afterFireMufflingCoef":1.0, "exhaustAudioMufflingCoef":1.0, "exhaustAudioGainChange":0}],
+         {"group":""},
+
+         //intercooler
+         {"group":"bx_intercooler"},
+         {"nodeWeight":4},
+         {"collision":true},
+         ["itc1", 0.0, -1.93, 0.29],
+         ["itc2", 0.0, -1.93, 0.46],
+
+         //air filter
+         {"nodeWeight":1},
+         {"group":"bx_airbox"},
+         ["airb2", -0.605, -1.613, 0.65],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          //turbo
+          {"beamSpring":1001000,"beamDamp":50},
+          {"beamDeform":96000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"mainEngine_turbo", "deformationTriggerRatio":0.01}
+          ["trb1","e1r"],
+          ["trb1","e2r"],
+          ["trb1","e3r", {"isExhaust":true}],
+          ["trb1","e4r"],
+          ["trb1","e1l"],
+          ["trb1","e2l"],
+          ["trb1","e3l"],
+          ["trb1","e4l"],
+          ["exm1r","e1r"],
+          ["exm1r","e2r"],
+          ["exm1r","e3r"],
+          ["exm1r","e4r"],
+          ["exm1r","e1l"],
+          ["exm1r","e2l"],
+          ["exm1r","e3l"],
+          ["exm1r","e4l"],
+          ["exm1r","trb1", {"isExhaust":true}],
+
+          //exhaust connector
+          {"beamSpring":5010000,"beamDamp":90},
+          {"beamDeform":90000,"beamStrength":"FLT_MAX"},
+          ["exm2r","exm1r", {"isExhaust":"mainEngine"}],
+          ["exm2r","e3l"],
+          ["exm2r","e3r"],
+          ["exm2r","e4l"],
+          ["exm2r","e4r"],
+          ["exm2r", "e1r"],
+          ["exm2r", "e1l"],
+          ["exm2r", "e2l"],
+          ["exm2r", "e2r"],
+
+          //intercooler
+          {"beamDeform":4000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"mainEngine_intercooler", "deformationTriggerRatio":0.1}
+          ["itc1", "itc2"],
+          ["itc1", "f11rr"],
+          ["itc1", "f11ll"],
+          ["f11ll", "itc2"],
+          ["f11rr", "itc2"],
+          ["itc2", "f13rr"],
+          ["itc2", "f13ll"],
+          ["f13ll", "itc1"],
+          ["itc1", "f13rr"],
+          ["itc1", "f11"],
+          ["itc2", "f11"],
+          ["itc1", "f10ll"],
+          ["itc1", "f10rr"],
+          ["itc2", "f12rr"],
+          ["itc2", "f12ll"],
+
+          //charge pipes
+          {"beamSpring":100000,"beamDamp":150},
+          {"beamDeform":2000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"mainEngine_piping", "deformationTriggerRatio":0.1}
+          ["trb1", "f11rr"],
+          ["trb1", "f13rr"],
+          ["f11ll", "e3l"],
+          ["f13ll", "e3l"],
+          {"deformGroup":""}
+
+          //air filter
+          {"beamSpring":71000,"beamDamp":300},
+          {"beamDeform":3000,"beamStrength":25000},
+          {"deformGroup":"mainEngine_intake", "deformationTriggerRatio":0.1}
+          ["airb2", "e3r"],
+          ["airb2", "e3l"],
+          ["airb2", "e4r"],
+          ["airb2", "e4l"],
+          ["airb2", "e2l"],
+          ["airb2", "e2r"],
+          {"deformGroup":"", "deformationTriggerRatio":""}
+
+          //attach to body
+          {"beamDeform":8000,"beamStrength":11000},
+          ["airb2", "f13rr"],
+          ["airb2", "f15r"],
+          ["airb2", "f15"],
+          ["airb2", "f11rr"],
+          ["airb2", "f15rr"],
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"jpe_2jz_turbo_stage1": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"FReddy Stage 1 Single Turbocharger",
+        "value":1000,
+    },
+    "slotType" : "jpe_2jz_turbo",
+    "turbocharger": {
+        "bovSoundFileName":"event:>Vehicle>Forced_Induction>Turbo_07>turbo_bov_race",
+        "hissLoopEvent":"event:>Vehicle>Forced_Induction>Turbo_07>turbo_hiss_race",
+        "whineLoopEvent":"event:>Vehicle>Forced_Induction>Turbo_07>turbo_spin_race",
+        "turboSizeCoef": 0.9,
+        "bovSoundVolumeCoef": 0.775,
+        "hissVolumePerPSI": 0.07,
+        "whineVolumePer10kRPM": 0.125,
+        "whinePitchPer10kRPM": 0.075,
+        "wastegateStart":17.5,
+        "wastegateLimit":18.5,
+        "maxExhaustPower": 15000,
+        "backPressureCoef": 0.000035,
+        "frictionCoef": 18,
+        "inertia":6,
+        "damageThresholdTemperature": 1000,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+			[0,      -3.5],
+			[30000,  -1],
+			[60000,   5],
+			[90000,  10],
+			[120000, 16],
+			[150000, 18],
+			[200000, 20],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.0,     0.0],
+            [650,   0.12,    0.15],
+            [1000,  0.43,    0.36],
+            [3000,  0.89,    0.86],
+            [4500,  0.90,    0.95],
+            [5000,  0.94,    0.95],
+            [6000,  0.93,    0.95],
+            [6500,  0.90,    0.99],
+            [7000,  0.85,    0.99],
+            [8000,  0.80,    1.0],
+            [9000,  0.60,    1.0],
+            [10000,  0.60,    1.0],
+        ],
+    },
+    "mainEngine":{
+         "torqueModIntake":[
+            ["rpm", "torque"],
+            [0,      10],
+            [2000,  20],
+            [3000,  22],
+            [4000,  35],
+            [5000,  45],
+            [6000,  24],
+            [7000,   18],
+            [8000,  14],
+            [9000,  12],
+            [10000,  10],
+        ],
+        //turbocharger name
+        "turbocharger":"turbocharger",
+        //turbocharger deform groups
+        "deformGroups_turbo":["mainEngine_turbo","mainEngine_intercooler","mainEngine_piping"]
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["jpe_2jz_intake_manifold", ["bx_engine"]],
+        ["jpe_2jz_single_turbokit", ["bx_engine", "bx_turbo", "bx_header"]],
+        ["jpe_2jz_intercooler", ["bx_radiator","bx_intercooler"]],
+        {"deformGroup":"mainEngine_piping", "deformMaterialBase":"generic_perf_parts", "deformMaterialDamaged":"invis"},
+        ["jpe_2jz_single_ic_pipes", ["bx_engine","bx_radiator"]],
+        {"deformGroup":""},
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        ["turboSpin"  , "jpe_2jz_turbowheel",     "e2r","e2l","e4r",  				{"x":0, "y":0, "z":-13.620}, {"x":0, "y":1.5, "z":0}    , 	{"x":-0.169, "y":0.852, "z":0.022},		 -360, 360, 0, 1.5],
+    ],	
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":false},
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+
+         //turbo/downpipe
+         {"group":"bx_turbo"},
+         {"nodeWeight":7},
+         ["trb1", 0.247, -1.263, 0.486],
+         ["exm1r", 0.247, -1.048, 0.486],
+         {"nodeWeight":2.0},
+         {"group":"bx_header"},
+         ["exm2r", -0.243, -1.03, 0.32, {"afterFireAudioCoef":1.0, "afterFireVisualCoef":1.0, "afterFireVolumeCoef":1.0, "afterFireMufflingCoef":1.0, "exhaustAudioMufflingCoef":1.0, "exhaustAudioGainChange":0}],
+         {"group":""},
+
+         //intercooler
+         {"group":"bx_intercooler"},
+         {"nodeWeight":4},
+         {"collision":true},
+         ["itc1", 0.0, -1.93, 0.29],
+         ["itc2", 0.0, -1.93, 0.46],
+
+         //air filter
+         {"nodeWeight":1},
+         {"group":"bx_airbox"},
+         ["airb2", -0.605, -1.613, 0.65],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          //turbo
+          {"beamSpring":1001000,"beamDamp":50},
+          {"beamDeform":96000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"mainEngine_turbo", "deformationTriggerRatio":0.01}
+          ["trb1","e1r"],
+          ["trb1","e2r"],
+          ["trb1","e3r", {"isExhaust":true}],
+          ["trb1","e4r"],
+          ["trb1","e1l"],
+          ["trb1","e2l"],
+          ["trb1","e3l"],
+          ["trb1","e4l"],
+          ["exm1r","e1r"],
+          ["exm1r","e2r"],
+          ["exm1r","e3r"],
+          ["exm1r","e4r"],
+          ["exm1r","e1l"],
+          ["exm1r","e2l"],
+          ["exm1r","e3l"],
+          ["exm1r","e4l"],
+          ["exm1r","trb1", {"isExhaust":true}],
+
+          //exhaust connector
+          {"beamSpring":5010000,"beamDamp":90},
+          {"beamDeform":90000,"beamStrength":"FLT_MAX"},
+          ["exm2r","exm1r", {"isExhaust":"mainEngine"}],
+          ["exm2r","e3l"],
+          ["exm2r","e3r"],
+          ["exm2r","e4l"],
+          ["exm2r","e4r"],
+          ["exm2r", "e1r"],
+          ["exm2r", "e1l"],
+          ["exm2r", "e2l"],
+          ["exm2r", "e2r"],
+
+          //intercooler
+          {"beamDeform":4000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"mainEngine_intercooler", "deformationTriggerRatio":0.1}
+          ["itc1", "itc2"],
+          ["itc1", "f11rr"],
+          ["itc1", "f11ll"],
+          ["f11ll", "itc2"],
+          ["f11rr", "itc2"],
+          ["itc2", "f13rr"],
+          ["itc2", "f13ll"],
+          ["f13ll", "itc1"],
+          ["itc1", "f13rr"],
+          ["itc1", "f11"],
+          ["itc2", "f11"],
+          ["itc1", "f10ll"],
+          ["itc1", "f10rr"],
+          ["itc2", "f12rr"],
+          ["itc2", "f12ll"],
+
+          //charge pipes
+          {"beamSpring":100000,"beamDamp":150},
+          {"beamDeform":2000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"mainEngine_piping", "deformationTriggerRatio":0.1}
+          ["trb1", "f11rr"],
+          ["trb1", "f13rr"],
+          ["f11ll", "e3l"],
+          ["f13ll", "e3l"],
+          {"deformGroup":""}
+
+          //air filter
+          {"beamSpring":71000,"beamDamp":300},
+          {"beamDeform":3000,"beamStrength":25000},
+          {"deformGroup":"mainEngine_intake", "deformationTriggerRatio":0.1}
+          ["airb2", "e3r"],
+          ["airb2", "e3l"],
+          ["airb2", "e4r"],
+          ["airb2", "e4l"],
+          ["airb2", "e2l"],
+          ["airb2", "e2r"],
+          {"deformGroup":"", "deformationTriggerRatio":""}
+
+          //attach to body
+          {"beamDeform":8000,"beamStrength":11000},
+          ["airb2", "f13rr"],
+          ["airb2", "f15r"],
+          ["airb2", "f15"],
+          ["airb2", "f11rr"],
+          ["airb2", "f15rr"],
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"jpe_2jz_turbo_stage2": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"FReddy Stage 2 Single Turbocharger",
+        "value":1500,
+    },
+    "slotType" : "jpe_2jz_turbo",
+    "turbocharger": {
+        "bovSoundFileName":"event:>Vehicle>Forced_Induction>Turbo_07>turbo_bov_race",
+        "hissLoopEvent":"event:>Vehicle>Forced_Induction>Turbo_07>turbo_hiss_race",
+        "whineLoopEvent":"event:>Vehicle>Forced_Induction>Turbo_07>turbo_spin_race",
+        "turboSizeCoef": 1.0,
+        "bovSoundVolumeCoef": 0.875,
+        "hissVolumePerPSI": 0.07,
+        "whineVolumePer10kRPM": 0.135,
+        "whinePitchPer10kRPM": 0.075,
+        "wastegateStart":20.5,
+        "wastegateLimit":21.5,
+        "maxExhaustPower": 25000,
+        "backPressureCoef": 0.000035,
+        "frictionCoef": 18,
+        "inertia":6,
+        "damageThresholdTemperature": 1000,
+        "pressureRatePSI": 35,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+			[0,      -3.5],
+			[40000,  -2],
+			[70000,   4],
+			[90000,  10],
+			[120000, 15],
+			[150000, 18.5],
+			[200000, 20.5],
+			[250000, 20.5],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.0,    0.0],
+            [650,   0.1,    0.15],
+            [1400,  0.25,   0.25],
+            [2000,  0.45,   0.35],
+            [2500,  0.55,   0.58],
+            [3000,  0.75,   0.65],
+            [4000,  0.90,   0.88],
+            [5000,  0.98,   0.95],
+            [6000,  0.99,   0.95],
+            [7000,  0.96,   0.90],
+            [8000,  0.98,   0.86],
+            [9000,  0.9,    0.80],
+            [10000,  0.9,    0.80],
+        ],
+    },
+    "mainEngine":{
+         "torqueModIntake":[
+            ["rpm", "torque"],
+			 [0,20],
+			 [2000,45],
+			 [3000,70],
+			 [4000,95],
+			 [5000,115],
+			 [6000,100],
+			 [7000,75],
+			 [8000,55],
+			 [9000,47.5]
+			 [10000,40]
+        ],
+        //turbocharger name
+        "turbocharger":"turbocharger",
+
+
+        //turbocharger deform groups
+        "deformGroups_turbo":["mainEngine_turbo","mainEngine_intercooler","mainEngine_piping"]
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":1800,
+        "clutchLaunchTargetRPM":2400,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["jpe_2jz_intake_manifold", ["bx_engine"]],
+        ["jpe_2jz_single_turbokit", ["bx_engine", "bx_turbo", "bx_header"]],
+        ["jpe_2jz_intercooler", ["bx_radiator","bx_intercooler"]],
+        {"deformGroup":"mainEngine_piping", "deformMaterialBase":"generic_perf_parts", "deformMaterialDamaged":"invis"},
+        ["jpe_2jz_single_ic_pipes", ["bx_engine","bx_radiator"]],
+        {"deformGroup":""},
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        ["turboSpin"  , "jpe_2jz_turbowheel",     "e2r","e2l","e4r",  				{"x":0, "y":0, "z":-13.620}, {"x":0, "y":1.5, "z":0}    , 	{"x":-0.169, "y":0.852, "z":0.022},		 -360, 360, 0, 1.5],
+    ],	
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":false},
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+
+         //turbo/downpipe
+         {"group":"bx_turbo"},
+         {"nodeWeight":7},
+         ["trb1", 0.247, -1.263, 0.486],
+         ["exm1r", 0.247, -1.048, 0.486],
+         {"nodeWeight":2.0},
+         {"group":"bx_header"},
+         ["exm2r", -0.243, -1.03, 0.32, {"afterFireAudioCoef":1.0, "afterFireVisualCoef":1.0, "afterFireVolumeCoef":1.0, "afterFireMufflingCoef":1.0, "exhaustAudioMufflingCoef":1.0, "exhaustAudioGainChange":0}],
+         {"group":""},
+
+         //intercooler
+         {"group":"bx_intercooler"},
+         {"nodeWeight":4},
+         {"collision":true},
+         ["itc1", 0.0, -1.93, 0.29],
+         ["itc2", 0.0, -1.93, 0.46],
+
+         //air filter
+         {"nodeWeight":1},
+         {"group":"bx_airbox"},
+         ["airb2", -0.605, -1.613, 0.65],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          //turbo
+          {"beamSpring":1001000,"beamDamp":50},
+          {"beamDeform":96000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"mainEngine_turbo", "deformationTriggerRatio":0.01}
+          ["trb1","e1r"],
+          ["trb1","e2r"],
+          ["trb1","e3r", {"isExhaust":true}],
+          ["trb1","e4r"],
+          ["trb1","e1l"],
+          ["trb1","e2l"],
+          ["trb1","e3l"],
+          ["trb1","e4l"],
+          ["exm1r","e1r"],
+          ["exm1r","e2r"],
+          ["exm1r","e3r"],
+          ["exm1r","e4r"],
+          ["exm1r","e1l"],
+          ["exm1r","e2l"],
+          ["exm1r","e3l"],
+          ["exm1r","e4l"],
+          ["exm1r","trb1", {"isExhaust":true}],
+
+          //exhaust connector
+          {"beamSpring":5010000,"beamDamp":90},
+          {"beamDeform":90000,"beamStrength":"FLT_MAX"},
+          ["exm2r","exm1r", {"isExhaust":"mainEngine"}],
+          ["exm2r","e3l"],
+          ["exm2r","e3r"],
+          ["exm2r","e4l"],
+          ["exm2r","e4r"],
+          ["exm2r", "e1r"],
+          ["exm2r", "e1l"],
+          ["exm2r", "e2l"],
+          ["exm2r", "e2r"],
+
+          //intercooler
+          {"beamDeform":4000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"mainEngine_intercooler", "deformationTriggerRatio":0.1}
+          ["itc1", "itc2"],
+          ["itc1", "f11rr"],
+          ["itc1", "f11ll"],
+          ["f11ll", "itc2"],
+          ["f11rr", "itc2"],
+          ["itc2", "f13rr"],
+          ["itc2", "f13ll"],
+          ["f13ll", "itc1"],
+          ["itc1", "f13rr"],
+          ["itc1", "f11"],
+          ["itc2", "f11"],
+          ["itc1", "f10ll"],
+          ["itc1", "f10rr"],
+          ["itc2", "f12rr"],
+          ["itc2", "f12ll"],
+
+          //charge pipes
+          {"beamSpring":100000,"beamDamp":150},
+          {"beamDeform":2000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"mainEngine_piping", "deformationTriggerRatio":0.1}
+          ["trb1", "f11rr"],
+          ["trb1", "f13rr"],
+          ["f11ll", "e3l"],
+          ["f13ll", "e3l"],
+          {"deformGroup":""}
+
+          //air filter
+          {"beamSpring":71000,"beamDamp":300},
+          {"beamDeform":3000,"beamStrength":25000},
+          {"deformGroup":"mainEngine_intake", "deformationTriggerRatio":0.1}
+          ["airb2", "e3r"],
+          ["airb2", "e3l"],
+          ["airb2", "e4r"],
+          ["airb2", "e4l"],
+          ["airb2", "e2l"],
+          ["airb2", "e2r"],
+          {"deformGroup":"", "deformationTriggerRatio":""}
+
+          //attach to body
+          {"beamDeform":8000,"beamStrength":11000},
+          ["airb2", "f13rr"],
+          ["airb2", "f15r"],
+          ["airb2", "f15"],
+          ["airb2", "f11rr"],
+          ["airb2", "f15rr"],
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"jpe_2jz_turbo_stage3": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"FReddy Stage 3 Single Turbocharger (ADJ)",
+        "value":2500,
+    },
+    "slotType" : "jpe_2jz_turbo",
+    "slots": [
+        ["type", "default", "description"],
+        ["jpe_2jz_WG", "jpe_2jz_WG_variable", "Wastegate Type", {"coreSlot":true}],
+    ],	
+    "turbocharger": {
+        "bovSoundFileName":"event:>Vehicle>Forced_Induction>Turbo_07>turbo_bov_race",
+        "hissLoopEvent":"event:>Vehicle>Forced_Induction>Turbo_07>turbo_hiss_race",
+        "whineLoopEvent":"event:>Vehicle>Forced_Induction>Turbo_07>turbo_spin_race",
+        "turboSizeCoef": 1.1,
+        "bovSoundVolumeCoef": 0.975,
+        "hissVolumePerPSI": 0.07,
+        "whineVolumePer10kRPM": 0.145,
+        "whinePitchPer10kRPM": 0.075,
+        //"wastegateStart":"$wastegateStart",
+        //"wastegateLimit":"$=$wastegateStart+1",
+        "maxExhaustPower": 75000,
+        "backPressureCoef": 0.000082,
+        "frictionCoef": 75,
+        "inertia":32,
+        "damageThresholdTemperature": 1000,
+        "pressureRatePSI": 100,
+        "pressurePSI":[
+            //turbineRPM, pressure(PSI)
+			[0,      -3.5],
+			[50000,  -2],
+			[80000,   2],
+			[100000,  8],
+			[130000, 20],
+			[160000, 38],
+			[180000, 52],
+			[200000, 60],
+			[260000, 67],
+			[300000, 75],
+        ],
+        "engineDef":[
+            //engineRPM, efficiency, exhaustFactor
+            [0,     0.0,     0.0],
+            [650,   0.19,   0.14],
+            [1400,  0.31,   0.16],
+            [2000,  0.42,   0.29],
+            [2500,  0.74,   0.37],
+            [3000,  0.91,   0.50],
+            [4000,  0.94,   0.83],
+            [5000,  0.96,   0.96],
+            [6000,  0.98,    0.96],
+            [7000,  1.0,    1.00],
+            [8000,  0.98,    0.95],
+            [9000,  0.96,    0.91],
+            [10000,  0.96,    0.91],
+        ],
+    },
+    "mainEngine":{
+         "torqueModIntake":[
+            ["rpm", "torque"],
+			 [0,30],
+			 [2000,70],
+			 [3000,110],
+			 [4000,140],
+			 [5000,170],
+			 [6000,160],
+			 [7000,130],
+			 [8000,110],
+			 [9000,80]
+			 [10000,60]
+        ],
+        //turbocharger name
+        "turbocharger":"turbocharger",
+        "$+idleRPMRoughness":50,
+        //turbocharger deform groups
+        "deformGroups_turbo":["mainEngine_turbo","mainEngine_intercooler","mainEngine_piping"]
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":1800,
+        "clutchLaunchTargetRPM":2400,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["jpe_2jz_intake_manifold", ["bx_engine"]],
+        ["jpe_2jz_single_turbokit", ["bx_engine", "bx_turbo", "bx_header"]],
+        ["jpe_2jz_intercooler", ["bx_radiator","bx_intercooler"]],
+        {"deformGroup":"mainEngine_piping", "deformMaterialBase":"generic_perf_parts", "deformMaterialDamaged":"invis"},
+        ["jpe_2jz_single_ic_pipes", ["bx_engine","bx_radiator"]],
+        {"deformGroup":""},
+    ],
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        ["turboSpin"  , "jpe_2jz_turbowheel",     "e2r","e2l","e4r",  				{"x":0, "y":0, "z":-13.620}, {"x":0, "y":1.5, "z":0}    , 	{"x":-0.0, "y":-0.0, "z":0.0},		 -360, 360, 0, 1.5],
+    ],	
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"selfCollision":false},
+         {"collision":false},
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+
+         //turbo/downpipe
+         {"group":"bx_turbo"},
+         {"nodeWeight":7},
+         ["trb1", 0.247, -1.263, 0.486],
+         ["exm1r", 0.247, -1.048, 0.486],
+         {"nodeWeight":2.0},
+         {"group":"bx_header"},
+         ["exm2r", -0.243, -1.03, 0.32, {"afterFireAudioCoef":1.0, "afterFireVisualCoef":1.0, "afterFireVolumeCoef":1.0, "afterFireMufflingCoef":1.0, "exhaustAudioMufflingCoef":1.0, "exhaustAudioGainChange":0}],
+         {"group":""},
+
+         //intercooler
+         {"group":"bx_intercooler"},
+         {"nodeWeight":4},
+         {"collision":true},
+         ["itc1", 0.0, -1.93, 0.29],
+         ["itc2", 0.0, -1.93, 0.46],
+
+         //air filter
+         {"nodeWeight":1},
+         {"group":"bx_airbox"},
+         ["airb2", -0.605, -1.613, 0.65],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+
+          //turbo
+          {"beamSpring":1001000,"beamDamp":50},
+          {"beamDeform":96000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"mainEngine_turbo", "deformationTriggerRatio":0.01}
+          ["trb1","e1r"],
+          ["trb1","e2r"],
+          ["trb1","e3r", {"isExhaust":true}],
+          ["trb1","e4r"],
+          ["trb1","e1l"],
+          ["trb1","e2l"],
+          ["trb1","e3l"],
+          ["trb1","e4l"],
+          ["exm1r","e1r"],
+          ["exm1r","e2r"],
+          ["exm1r","e3r"],
+          ["exm1r","e4r"],
+          ["exm1r","e1l"],
+          ["exm1r","e2l"],
+          ["exm1r","e3l"],
+          ["exm1r","e4l"],
+          ["exm1r","trb1", {"isExhaust":true}],
+
+          //exhaust connector
+          {"beamSpring":5010000,"beamDamp":90},
+          {"beamDeform":90000,"beamStrength":"FLT_MAX"},
+          ["exm2r","exm1r", {"isExhaust":"mainEngine"}],
+          ["exm2r","e3l"],
+          ["exm2r","e3r"],
+          ["exm2r","e4l"],
+          ["exm2r","e4r"],
+          ["exm2r", "e1r"],
+          ["exm2r", "e1l"],
+          ["exm2r", "e2l"],
+          ["exm2r", "e2r"],
+
+          //intercooler
+          {"beamDeform":4000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"mainEngine_intercooler", "deformationTriggerRatio":0.1}
+          ["itc1", "itc2"],
+          ["itc1", "f11rr"],
+          ["itc1", "f11ll"],
+          ["f11ll", "itc2"],
+          ["f11rr", "itc2"],
+          ["itc2", "f13rr"],
+          ["itc2", "f13ll"],
+          ["f13ll", "itc1"],
+          ["itc1", "f13rr"],
+          ["itc1", "f11"],
+          ["itc2", "f11"],
+          ["itc1", "f10ll"],
+          ["itc1", "f10rr"],
+          ["itc2", "f12rr"],
+          ["itc2", "f12ll"],
+
+          //charge pipes
+          {"beamSpring":100000,"beamDamp":150},
+          {"beamDeform":2000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"mainEngine_piping", "deformationTriggerRatio":0.1}
+          ["trb1", "f11rr"],
+          ["trb1", "f13rr"],
+          ["f11ll", "e3l"],
+          ["f13ll", "e3l"],
+          {"deformGroup":""}
+
+          //air filter
+          {"beamSpring":71000,"beamDamp":300},
+          {"beamDeform":3000,"beamStrength":25000},
+          {"deformGroup":"mainEngine_intake", "deformationTriggerRatio":0.1}
+          ["airb2", "e3r"],
+          ["airb2", "e3l"],
+          ["airb2", "e4r"],
+          ["airb2", "e4l"],
+          ["airb2", "e2l"],
+          ["airb2", "e2r"],
+          {"deformGroup":"", "deformationTriggerRatio":""}
+
+          //attach to body
+          {"beamDeform":8000,"beamStrength":11000},
+          ["airb2", "f13rr"],
+          ["airb2", "f15r"],
+          ["airb2", "f15"],
+          ["airb2", "f11rr"],
+          ["airb2", "f15rr"],
+
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"jpe_2jz_WG_variable": {
+    "information":{
+        "authors":"",
+        "name":"Variable Wastegate",
+        "value":50,
+    },
+    "slotType" : "jpe_2jz_WG",
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$wastegateStart1", "range", "psi", "Engine", 50, 20, 120, "Turbo Boost Pressure", "Pressure at which the wastegate begins to open", {"stepDis":0.1, "subCategory":"Turbo"}],
+    ],
+    "turbocharger": {
+        "wastegateStart":"$wastegateStart1",
+        "wastegateLimit":"$=$wastegateStart1 +1",
+    },
+},
+"jpe_2jz_WG_bbg": {
+    "information":{
+        "authors":"",
+        "name":"Boost by Gear Wastegate",
+        "value":250,
+    },
+    "slotType" : "jpe_2jz_WG",
+	"variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"]
+        ["$gear1", "range", "psi", "Engine", 15, 0, 120,  "Boost 1st Gear", "Max Boost in 1st Gear", {"stepDis":0.5, "subCategory":"Turbo"}],
+        ["$gear2", "range", "psi", "Engine", 20, 0, 120, "Boost 2nd Gear", "Max Boost in 2nd Gear", {"stepDis":0.5, "subCategory":"Turbo"}],
+		["$gear3", "range", "psi", "Engine", 25, 0, 120, "Boost 3rd Gear", "Max Boost in 3rd Gear", {"stepDis":0.5, "subCategory":"Turbo"}],
+		["$gear4", "range", "psi", "Engine", 30, 0, 120, "Boost 4th Gear", "Max Boost in 4th Gear", {"stepDis":0.5, "subCategory":"Turbo"}],
+		["$gear5", "range", "psi", "Engine", 40, 0, 120, "Boost 5th Gear", "Max Boost in 5th Gear", {"stepDis":0.5, "subCategory":"Turbo"}],
+		["$gear6", "range", "psi", "Engine", 40, 0, 120, "Boost 6th Gear", "Max Boost in 6th Gear", {"stepDis":0.5, "subCategory":"Turbo"}],
+		["$gear7", "range", "psi", "Engine", 40, 0, 120, "Boost 7th Gear", "Max Boost in 7th Gear", {"stepDis":0.5, "subCategory":"Turbo"}],
+    ],
+    "turbocharger": {
+        "wastegateStart":["$gear1", "$gear2", "$gear3", "$gear4", "$gear5", "$gear6", "$gear7", "$gear8"],
+        "wastegateLimit":"$=$wastegateStart+1",
+    },
+ },
+}

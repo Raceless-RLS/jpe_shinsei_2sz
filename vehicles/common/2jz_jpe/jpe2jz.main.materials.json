@@ -1,0 +1,853 @@
+{
+  "JefeAluSemi2jz": {
+    "name": "JefeAluSemi2jz",
+    "mapTo": "JefeAluSemi2jz",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.753556013,
+          0.768029988,
+          0.784313977,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 0.204999998
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+  "JefeMatteBlack2jz": {
+    "name": "JefeMatteBlack2jz",
+    "mapTo": "JefeMatteBlack2jz",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.0377570018,
+          0.0377570018,
+          0.0377570018,
+          1
+        ],
+        "metallicFactor": 0.598999977,
+        "roughnessFactor": 0.503000021
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "doubleSided": true,
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "translucentRecvShadows": true,
+    "version": 1.5
+  },
+  "JefeMatteRubber2jz": {
+    "name": "JefeMatteRubber2jz",
+    "mapTo": "JefeMatteRubber2jz",
+    "class": "material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.180948004,
+          0.180948004,
+          0.180948004,
+          1
+        ],
+        "metallicFactor": 0.535000026,
+        "roughnessFactor": 0.785000026
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "_2jz_glossy": {
+    "name": "_2jz_glossy",
+    "mapTo": "2jz_glossy",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ],
+        "baseColorMap": "/vehicles/common/2jz_jpe/textures/i6_2JZ_vvti.b.color.png",
+        "metallicFactor": 0.773999989,
+        "roughnessFactor": 0.382999986
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "_2jz_metal": {
+    "name": "_2jz_metal",
+    "mapTo": "2jz_metal",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ],
+        "baseColorMap": "/vehicles/common/2jz_jpe/textures/i6_2JZ_vvti.b.color.png",
+        "metallicFactor": 1,
+        "roughnessFactor": 0.592999995
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "_2jz_metal_vvti": {
+    "name": "_2jz_metal_vvti",
+    "mapTo": "2jz_metal_vvti",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ],
+        "baseColorMap": "/vehicles/common/2jz_jpe/textures/i6_2JZ_vvti.b.color.png",
+        "metallicFactor": 1,
+        "roughnessFactor": 0.657999992
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "_2jz_plastic": {
+    "name": "_2jz_plastic",
+    "mapTo": "2jz_plastic",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/common/2jz_jpe/textures/i6_2JZ_vvti.b.color.png",
+        "metallicFactor": 0.194000006,
+        "roughnessFactor": 0.708999991
+      },
+      {
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "i6_2jz_alternator": {
+    "name": "i6_2jz_alternator",
+    "mapTo": "i6_2jz_alternator",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ],
+        "baseColorMap": "/vehicles/common/2jz_jpe/textures/i6_2JZ_alternator.b.color.png",
+        "metallicFactor": 0.592999995,
+        "roughnessFactor": 0.338999987
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "i6_2jz_beltensioner": {
+    "name": "i6_2jz_beltensioner",
+    "mapTo": "i6_2jz_beltensioner",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ],
+        "baseColorMap": "/vehicles/common/2jz_jpe/textures/i6_2JZ_beltensioner.b.color.png",
+        "metallicFactor": 0.583999991,
+        "roughnessFactor": 0.400999993
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "i6_2jz_block_a": {
+    "name": "i6_2jz_block_a",
+    "mapTo": "i6_2jz_block_a",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ],
+        "baseColorMap": "/vehicles/common/2jz_jpe/textures/i6_2JZ_block_a.b.color.png",
+        "metallicFactor": 0.888999999,
+        "roughnessFactor": 0.351000011
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "i6_2jz_block_c": {
+    "name": "i6_2jz_block_c",
+    "mapTo": "i6_2jz_block_c",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ],
+        "baseColorMap": "/vehicles/common/2jz_jpe/textures/i6_2JZ_block_c.b.color.png",
+        "metallicFactor": 0.75,
+        "roughnessFactor": 0.412999988
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "i6_2jz_campulley_a": {
+    "name": "i6_2jz_campulley_a",
+    "mapTo": "i6_2jz_campulley_a",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ],
+        "baseColorMap": "/vehicles/common/2jz_jpe/textures/i6_2JZ_campulley_a.b.color.png",
+        "metallicFactor": 0.827000022,
+        "roughnessFactor": 0.377000004
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "i6_2jz_camshaft": {
+    "name": "i6_2jz_camshaft",
+    "mapTo": "i6_2jz_camshaft",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ],
+        "baseColorMap": "/vehicles/common/2jz_jpe/textures/i6_2JZ_camshaft.b.color.png"
+      },
+      {
+        "baseColorFactor": null
+      },
+      {
+        "baseColorFactor": null
+      },
+      {
+        "baseColorFactor": null
+      }
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "i6_2jz_fuelrail_a": {
+    "name": "i6_2jz_fuelrail_a",
+    "mapTo": "i6_2jz_fuelrail_a",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ],
+        "baseColorMap": "/vehicles/common/2jz_jpe/textures/i6_2JZ_fuelrail_a.b.color.png",
+        "metallicFactor": 1,
+        "roughnessFactor": 0.787999988
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "i6_2jz_intercooler_l_glossy": {
+    "name": "i6_2jz_intercooler_l_glossy",
+    "mapTo": "i6_2jz_intercooler_l_glossy",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ],
+        "baseColorMap": "/vehicles/common/2jz_jpe/textures/i6_2JZ_intercooler_l.b.color.png",
+        "metallicFactor": 1,
+        "roughnessFactor": 0.377000004
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "i6_2jz_oilfilter_b": {
+    "name": "i6_2jz_oilfilter_b",
+    "mapTo": "i6_2jz_oilfilter_b",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ],
+        "baseColorMap": "/vehicles/common/2jz_jpe/textures/i6_2JZ_oilfilter_b.b.color.png"
+      },
+      {
+        "baseColorFactor": null
+      },
+      {
+        "baseColorFactor": null
+      },
+      {
+        "baseColorFactor": null
+      }
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "i6_2jz_oilpan_a_glossy": {
+    "name": "i6_2jz_oilpan_a_glossy",
+    "mapTo": "i6_2jz_oilpan_a_glossy",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ],
+        "baseColorMap": "/vehicles/common/2jz_jpe/textures/i6_2JZ_oilpan_a.b.color.png",
+        "roughnessFactor": 0.456999987
+      },
+      {
+        "baseColorFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "i6_2jz_oilpan_a_plastic": {
+    "name": "i6_2jz_oilpan_a_plastic",
+    "mapTo": "i6_2jz_oilpan_a_plastic",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ],
+        "baseColorMap": "/vehicles/common/2jz_jpe/textures/i6_2JZ_oilpan_a.b.color.png"
+      },
+      {
+        "baseColorFactor": null
+      },
+      {
+        "baseColorFactor": null
+      },
+      {
+        "baseColorFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "i6_2jz_oilstick": {
+    "name": "i6_2jz_oilstick",
+    "mapTo": "i6_2jz_oilstick",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ],
+        "baseColorMap": "/vehicles/common/2jz_jpe/textures/i6_2JZ_oilstick.b.color.png",
+        "metallicFactor": 0.486999989
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "i6_2jz_pulley": {
+    "name": "i6_2jz_pulley",
+    "mapTo": "i6_2jz_pulley",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ],
+        "baseColorMap": "/vehicles/common/2jz_jpe/textures/i6_2JZ_pulley.b.color.png",
+        "metallicFactor": 0.442000002,
+        "roughnessFactor": 0.753000021
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "i6_2jz_sparkplug_a": {
+    "name": "i6_2jz_sparkplug_a",
+    "mapTo": "i6_2jz_sparkplug_a",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ],
+        "baseColorMap": "/vehicles/common/2jz_jpe/textures/i6_2JZ_sparkplug_a.b.color.png"
+      },
+      {
+        "baseColorFactor": null
+      },
+      {
+        "baseColorFactor": null
+      },
+      {
+        "baseColorFactor": null
+      }
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "i6_2jz_starter": {
+    "name": "i6_2jz_starter",
+    "mapTo": "i6_2jz_starter",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/common/2jz_jpe/textures/i6_2JZ_starter.b.color.png",
+        "metallicFactor": 1,
+        "roughnessFactor": 0.412999988
+      },
+      {
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "i6_2jz_turbocharger_a": {
+    "name": "i6_2jz_turbocharger_a",
+    "mapTo": "i6_2jz_turbocharger_a",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/common/2jz_jpe/textures/i6_2JZ_turbocharger_a.b.color.png",
+        "metallicFactor": 1,
+        "roughnessFactor": 0.472000003
+      },
+      {
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "i6_2jz_waterpump": {
+    "name": "i6_2jz_waterpump",
+    "mapTo": "i6_2jz_waterpump",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ],
+        "baseColorMap": "/vehicles/common/2jz_jpe/textures/i6_2JZ_waterpump.b.color.png",
+        "metallicFactor": 1,
+        "roughnessFactor": 0.49000001
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  "precision_110_g2_billet_jpe_2jz": {
+    "name": "precision_110_g2_billet_jpe_2jz",
+    "mapTo": "precision_110_g2_billet_jpe_2jz",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "vehicles/common/2jz_jpe/textures/pre_110_g2.b.color.png",
+        "metallicFactor": 0.898000002,
+        "normalMap": "vehicles/common/2jz_jpe/textures/pre_110_g2.n.normal.png",
+        "normalMapStrength": 0.300000012,
+        "roughnessFactor": 0.483999997
+      },
+      {
+        "metallicFactor": null,
+        "normalMapStrength": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "normalMapStrength": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "normalMapStrength": null,
+        "roughnessFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "version": 1.5
+  },
+  "shinsei_logo": {
+    "name": "shinsei_logo",
+    "mapTo": "shinsei_logo",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/common/2jz_jpe/textures/shinsei_logo1.b.color.png",
+        "metallicFactor": 1,
+        "normalMap": "/vehicles/common/2jz_jpe/textures/shinsei_logo1.n.normal.png",
+        "roughnessFactor": 0.244000003
+      },
+      {
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
+  
+}

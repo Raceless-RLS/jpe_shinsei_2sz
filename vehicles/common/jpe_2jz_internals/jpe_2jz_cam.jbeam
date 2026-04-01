@@ -1,0 +1,78 @@
+{
+"jpe_2jz_cam_s": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Stock Shinsei Cams",
+        "value":250,
+    },
+    "slotType" : "jpe_2jz_cam",
+    "mainEngine":{
+		"idleRPMVariance":15,
+	"idleRPMVarianceFrequency":12.5,
+        
+    },
+},
+"jpe_2jz_cam_m": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"SRD Street Cams",
+        "value":750,
+    },
+    "slotType" : "jpe_2jz_cam",
+    "mainEngine":{
+	
+     "torqueModPart23":[
+            ["rpm", "torque"],
+            [0, 0],
+            [250, 5],
+            [500, 10],
+            [1000, 15],
+            [1500, 15],
+            [2500, 25],
+            [3500, 25],
+            [4000, 30],
+            [5000, 30],
+            [6000, 30],
+            [7000, 30],
+            [8000, 40],
+            [9000, 40],
+            [10000, 30],
+         ],
+	"idleRPMVariance":250,
+	"idleRPMVarianceFrequency":12.5,
+	//"maxIdleThrottle":0.99
+    },
+}
+"jpe_2jz_cam_a": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"SRD Race Cams",
+        "value":1000,
+    },
+    "slotType" : "jpe_2jz_cam",
+    "mainEngine":{
+	
+     "torqueModPart23":[
+            ["rpm", "torque"],
+            [0, 0],
+            [250, 10],
+            [500, 15],
+            [1000, 25],
+            [1500, 35],
+            [2500, 45],
+            [3500, 55],
+            [4000, 60],
+            [5000, 70],
+            [6000, 70],
+            [7000, 70],
+            [8000, 60],
+            [9000, 55],
+            [10000, 50],			
+        ],
+	"idleRPMVariance":350,
+	"idleRPMVarianceFrequency":11.75,
+	//"maxIdleThrottle":0.99
+        
+    },
+},
+}

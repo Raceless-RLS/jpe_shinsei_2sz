@@ -330,4 +330,30 @@
         {"deformGroup":""},
     ],
 },
+"jpe_2jz_engine_cover_sc": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Body Color Engine Cover",
+        "value":200,
+    },
+    "slotType" : "jpe_2jz_engine_cover",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["jpe_2jz_engine_cover", ["bx_engine"]],
+        {"deformGroup":""},
+    ],
+},
+"jpe_2jz_engine_cover_cc": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Body Color Cut Engine Cover",
+        "value":150,
+    },
+    "slotType" : "jpe_2jz_engine_cover",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["jpe_2jz_engine_cover_cut", ["bx_engine"]],
+        {"deformGroup":""},
+    ],
+},
 }

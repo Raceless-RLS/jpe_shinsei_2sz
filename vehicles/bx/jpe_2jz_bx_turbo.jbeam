@@ -278,8 +278,8 @@
     ],
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
-        ["turboSpin"  , "jpe_2jz_turbowheel",     "e2r","e2l","e4r",  				{"x":0, "y":0, "z":-13.620}, {"x":0, "y":1.5, "z":0}    , 	{"x":-0.169, "y":0.852, "z":0.022},		 -360, 360, 0, 1.5],
-    ],	
+        ["turboSpin"  , "jpe_2jz_turbowheel",     "e2r","e2l","e4r",  				{"x":0, "y":0, "z":-13.620}, {"x":0, "y":1.5, "z":0}    , 	{"x":-0.0, "y":-0.0, "z":0.0},		 -360, 360, 0, 1.5],
+    ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
          {"selfCollision":false},
@@ -489,8 +489,8 @@
     ],
     "props": [
         ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
-        ["turboSpin"  , "jpe_2jz_turbowheel",     "e2r","e2l","e4r",  				{"x":0, "y":0, "z":-13.620}, {"x":0, "y":1.5, "z":0}    , 	{"x":-0.169, "y":0.852, "z":0.022},		 -360, 360, 0, 1.5],
-    ],	
+        ["turboSpin"  , "jpe_2jz_turbowheel",     "e2r","e2l","e4r",  				{"x":0, "y":0, "z":-13.620}, {"x":0, "y":1.5, "z":0}    , 	{"x":-0.0, "y":-0.0, "z":0.0},		 -360, 360, 0, 1.5],
+    ],
     "nodes": [
          ["id", "posX", "posY", "posZ"],
          {"selfCollision":false},

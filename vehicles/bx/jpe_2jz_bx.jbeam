@@ -299,7 +299,7 @@
     "slots": [
         ["type", "default", "description"],
         ["jpe_2jz_engine_cover","jpe_2jz_engine_cover_s", "Engine Cover Style"],		
-        ["jpe_2jz_cam_pulley","jpe_2jz_cam_pulley_s", "Engine Cover Style"],		
+        ["jpe_2jz_cam_pulley","jpe_2jz_cam_pulley_s", "Cam Pulley Style"],		
     ],
 },
 "jpe_2jz_engine_cover_s": {

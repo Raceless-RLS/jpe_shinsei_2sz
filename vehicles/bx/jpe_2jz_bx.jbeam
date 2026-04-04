@@ -178,13 +178,12 @@
         "highShiftDownRPM":[0,0,0,2800,3800,4300,4700,4700],
         //**highShiftUp can be overwritten by intake modifications**
         "highShiftUpRPM":6800,
-    },
+    },	
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
         ["jpe_2jz_block", ["bx_engine"]],
 		//["bx_engbaycrap_custom", ["bx_body","bx_shocktop_F"]],
-        {"deformGroup":""},
-    ],
+	],
     "props": [
         ["func",            "mesh",                   "idRef:", "idX:", "idY:", "baseRotation",          "rotation",            "translation",         "min", "max", "offset", "multiplier"],
         ["rpmspin",             "jpe_2jz_pulley_1",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,  360,   0,        1],

@@ -192,8 +192,6 @@
         ["rpmspin",             "jpe_2jz_pulley_4",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,  360,   0,        1],
         ["rpmspin",             "jpe_2jz_pulley_5",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,  360,   0,        1],
         ["rpmspin",             "jpe_2jz_pulley_6",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -1440,  1440, 0,        4],
-        ["rpmspin",             "jpe_2jz_cam_pulley_1",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,  360,   0,        1],
-        ["rpmspin",             "jpe_2jz_cam_pulley_2",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -1440,  1440, 0,        4],
 
     ],	
     "nodes": [
@@ -301,6 +299,7 @@
     "slots": [
         ["type", "default", "description"],
         ["jpe_2jz_engine_cover","jpe_2jz_engine_cover_s", "Engine Cover Style"],		
+        ["jpe_2jz_cam_pulley","jpe_2jz_cam_pulley_s", "Engine Cover Style"],		
     ],
 },
 "jpe_2jz_engine_cover_s": {
@@ -353,6 +352,34 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
         ["jpe_2jz_engine_cover_cut_c", ["bx_engine"]],
         {"deformGroup":""},
+    ],
+},
+"jpe_2jz_cam_pulley_s": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Stock Cam Pulleys",
+        "value":250,
+    },
+    "slotType" : "jpe_2jz_cam_pulley",
+    "props": [
+        ["func",            "mesh",                   "idRef:", "idX:", "idY:", "baseRotation",          "rotation",            "translation",         "min", "max", "offset", "multiplier"],
+        ["rpmspin",             "jpe_2jz_cam_pulley_1",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,  360,   0,        1],
+        ["rpmspin",             "jpe_2jz_cam_pulley_2",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -1440,  1440, 0,        4],
+
+    ],
+},
+"jpe_2jz_cam_pulley_b": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Billet Cam Pulleys",
+        "value":550,
+    },
+    "slotType" : "jpe_2jz_cam_pulley",
+    "props": [
+        ["func",            "mesh",                   "idRef:", "idX:", "idY:", "baseRotation",          "rotation",            "translation",         "min", "max", "offset", "multiplier"],
+        ["rpmspin",             "jpe_2jz_billet_cam_pulley_1",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,  360,   0,        1],
+        ["rpmspin",             "jpe_2jz_billet_cam_pulley_2",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -1440,  1440, 0,        4],
+
     ],
 },
 }

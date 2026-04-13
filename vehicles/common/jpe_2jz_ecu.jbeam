@@ -10,6 +10,13 @@
         "revLimiterRPM":7100,
         "revLimiterType":"timeBased",
         "revLimiterCutTime":0.11,
+        "$*instantAfterFireCoef": 1.10,
+        "$*sustainedAfterFireCoef": 1.05,		
+
+		//flames
+		"particulates":0.01,
+		"exhaustFlameSizeCoef":1.5,
+		"exhaustFlameColorCoef":1.25,		
     },
 },
 "jpe_2jz_ecu_sport": {

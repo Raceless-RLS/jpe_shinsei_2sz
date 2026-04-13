@@ -26,8 +26,8 @@
 		"headGasketDamageThreshold":1000000,
 		"pistonRingDamageThreshold":1000000,
 		"connectingRodDamageThreshold":1500000,
-		"maxTorqueRating":475,
-		"maxOverTorqueDamage":250
+		"maxTorqueRating":575,
+		"maxOverTorqueDamage":350
     },
 },
 "bx_engine_block_i6_heavy_jefe": {

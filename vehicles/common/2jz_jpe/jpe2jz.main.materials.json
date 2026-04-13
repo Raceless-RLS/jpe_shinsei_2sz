@@ -1,4 +1,31 @@
 {
+  "_2jz_billet_engine_gloss_002": {
+    "name": "_2jz_billet_engine_gloss_002",
+    "mapTo": "2jz_billet_engine_gloss.002",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorMap": "/vehicles/common/2jz_jpe/2jz_billet_engine",
+        "metallicFactor": 1,
+        "roughnessFactor": 0.305999994
+      },
+      {
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "metallicFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "dynamicCubemap": true,
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },	
   "JefeAluSemi2jz": {
     "name": "JefeAluSemi2jz",
     "mapTo": "JefeAluSemi2jz",

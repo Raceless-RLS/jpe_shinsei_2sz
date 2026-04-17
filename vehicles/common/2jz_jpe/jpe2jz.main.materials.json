@@ -817,6 +817,41 @@
     "translucentBlendOp": "None",
     "version": 1.5
   },
+    "Jefe_K&NFilter2jz": {
+    "name": "Jefe_K&NFilter2jz",
+    "mapTo": "Jefe_K&NFilter2jz",
+    "class": "Material",
+    "Stages": [
+      {
+        "baseColorFactor": [
+          0.800000012,
+          0.800000012,
+          0.800000012,
+          1
+        ],
+        "baseColorMap": "/vehicles/common/2jz_jpe/textures/Intake_K&N_57i_Albedo.png",
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.5
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      },
+      {
+        "baseColorFactor": null,
+        "metallicFactor": null,
+        "roughnessFactor": null
+      }
+    ],
+    "translucentBlendOp": "None",
+    "version": 1.5
+  },
   "precision_110_g2_billet_jpe_2jz": {
     "name": "precision_110_g2_billet_jpe_2jz",
     "mapTo": "precision_110_g2_billet_jpe_2jz",

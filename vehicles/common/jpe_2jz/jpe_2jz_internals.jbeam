@@ -1,0 +1,191 @@
+{
+"jpe_2jz_internals": {
+    "information": {
+        "authors": "Jefe/JPE",
+        "name": "Engine Internals",
+        "value": 0
+    },
+    "slotType": "jpe_2jz_internals",
+    "slots": [
+        ["type", "default", "description"],
+        ["jpe_2jz_bottom_end_main", "jpe_2jz_bottom_end_main", "Bottom End", {"coreSlot": true}],
+        ["jpe_2jz_top_end_main", "jpe_2jz_top_end_main", "Valvetrain", {"coreSlot": true}]
+    ]
+},
+"jpe_2jz_bottom_end_main": {
+    "information": {
+        "authors": "Jefe/JPE",
+        "name": "Bottom End",
+        "value": 0
+    },
+    "slotType": "jpe_2jz_bottom_end_main",
+    "slots": [
+        ["type", "default", "description"],
+        ["bx_engine_block_i6_jefe", "bx_engine_block_i6_stock_jefe", "Long Block", {"coreSlot": true}]
+    ]
+},
+"bx_engine_block_i6_stock_jefe": {
+    "information": {
+        "authors": "Jefe/JPE",
+        "name": "Stock Shinsei Long Block",
+        "value": 625
+    },
+    "slotType": "bx_engine_block_i6_jefe",
+    "slots": [
+        ["type", "default", "description"],
+        ["jpe_2jz_sleeves", "jpe_2jz_sleeves_stock", "Cylinder Sleeves", {"coreSlot": true}]
+    ],
+    "mainEngine": {
+        "cylinderWallTemperatureDamageThreshold": 150,
+        "headGasketDamageThreshold": 1000000,
+        "pistonRingDamageThreshold": 1000000,
+        "connectingRodDamageThreshold": 1500000,
+        "maxTorqueRating": 575,
+        "maxOverTorqueDamage": 350
+    }
+},
+"bx_engine_block_i6_heavy_jefe": {
+    "information": {
+        "authors": "Jefe/JPE",
+        "name": "SRD Forged Long Block",
+        "value": 1250
+    },
+    "slotType": "bx_engine_block_i6_jefe",
+    "slots": [
+        ["type", "default", "description"],
+        ["jpe_2jz_sleeves", "jpe_2jz_sleeves_stock", "Cylinder Sleeves", {"coreSlot": true}]
+    ],
+    "mainEngine": {
+        "torqueModMult": [
+            ["rpm", "torque"],
+            [0, 0.96],
+            [2000, 0.97],
+            [3000, 1.0],
+            [4000, 1.04],
+            [5000, 1.08],
+            [6000, 1.12],
+            [7000, 1.15],
+            [8000, 1.15],
+            [9000, 1.12],
+            [10000, 1.1]
+        ],
+        "cylinderWallTemperatureDamageThreshold": 225,
+        "headGasketDamageThreshold": 2000000,
+        "pistonRingDamageThreshold": 2000000,
+        "connectingRodDamageThreshold": 2500000,
+        "maxTorqueRating": 1200,
+        "maxOverTorqueDamage": 500
+    }
+},
+"bx_engine_block_i6_ultra_jefe": {
+    "information": {
+        "authors": "Jefe/JPE",
+        "name": "SRD Billet Long Block",
+        "value": 2500
+    },
+    "slotType": "bx_engine_block_i6_jefe",
+    "slots": [
+        ["type", "default", "description"],
+        ["jpe_2jz_sleeves", "jpe_2jz_sleeves_stock", "Cylinder Sleeves", {"coreSlot": true}]
+    ],
+    "mainEngine": {
+        "torqueModMult": [
+            ["rpm", "torque"],
+            [0, 0.9],
+            [2000, 0.92],
+            [3000, 0.98],
+            [4000, 1.05],
+            [5000, 1.15],
+            [6000, 1.25],
+            [7000, 1.35],
+            [8000, 1.4],
+            [9000, 1.38],
+            [10000, 1.36]
+        ],
+        "cylinderWallTemperatureDamageThreshold": 475,
+        "headGasketDamageThreshold": 40000000,
+        "pistonRingDamageThreshold": 40000000,
+        "connectingRodDamageThreshold": 45000000,
+        "maxTorqueRating": 3500,
+        "maxOverTorqueDamage": 1750
+    }
+},
+"jpe_2jz_sleeves_stock": {
+    "information": {
+        "authors": "Jefe/JPE",
+        "name": "Stock Sleeves",
+        "value": 0
+    },
+    "slotType": "jpe_2jz_sleeves",
+    "mainEngine": {}
+},
+"jpe_2jz_sleeves_stage1": {
+    "information": {
+        "authors": "RLS Team/Jefe",
+        "name": "Stage 1 Sleeves (+20%)",
+        "value": 1900
+    },
+    "slotType": "jpe_2jz_sleeves",
+    "mainEngine": {
+        "$*friction": 0.99,
+        "$*dynamicFriction": 0.99,
+        "$*inertia": 0.8,
+        "$*engineBrakeTorque": 0.9,
+        "$+maxTorqueRating": 250,
+        "$*maxTorqueRating": 1.2,
+        "$*maxOverTorqueDamage": 1.2
+    }
+},
+"jpe_2jz_sleeves_stage2": {
+    "information": {
+        "authors": "RLS Team/Jefe",
+        "name": "Stage 2 Sleeves (+60%)",
+        "value": 4600
+    },
+    "slotType": "jpe_2jz_sleeves",
+    "mainEngine": {
+        "$*friction": 0.96,
+        "$*dynamicFriction": 0.98,
+        "$*inertia": 1.15,
+        "$*engineBrakeTorque": 1.1,
+        "$*maxTorqueRating": 1.6,
+        "$*maxOverTorqueDamage": 1.6,
+        "$+maxPhysicalRPM": 800
+    }
+},
+"jpe_2jz_sleeves_stage3": {
+    "information": {
+        "authors": "RLS Team/Jefe",
+        "name": "Stage 3 Sleeves (+100%)",
+        "value": 13600
+    },
+    "slotType": "jpe_2jz_sleeves",
+    "mainEngine": {
+        "$*friction": 0.9,
+        "$*dynamicFriction": 0.9,
+        "$*inertia": 1.2,
+        "$*engineBrakeTorque": 1.2,
+        "$*maxTorqueRating": 2.0,
+        "$*maxOverTorqueDamage": 2.0,
+        "$+maxPhysicalRPM": 1200
+    }
+},
+"jpe_2jz_sleeves_stage4": {
+    "information": {
+        "authors": "RLS Team/Jefe",
+        "name": "Stage 4 Sleeves (+200%)",
+        "value": 25600
+    },
+    "slotType": "jpe_2jz_sleeves",
+    "mainEngine": {
+        "$*friction": 0.9,
+        "$*dynamicFriction": 0.9,
+        "$*inertia": 1.2,
+        "$*engineBrakeTorque": 1.2,
+        "$*maxTorqueRating": 3.0,
+        "$*maxOverTorqueDamage": 3.0,
+        "$+maxPhysicalRPM": 1500,
+        "$+maxRPM": 400
+    }
+}
+}

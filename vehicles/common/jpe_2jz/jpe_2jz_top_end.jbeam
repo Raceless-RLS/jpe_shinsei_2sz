@@ -1,0 +1,142 @@
+{
+"jpe_2jz_top_end_main": {
+    "information": {
+        "authors": "Jefe/JPE",
+        "name": "Valvetrain",
+        "value": 0
+    },
+    "slotType": "jpe_2jz_top_end_main",
+    "slots": [
+        ["type", "default", "description"],
+        ["jpe_2jz_cylinder_head_main", "jpe_2jz_cylinder_head_main", "Cylinder Head", {"coreSlot": true}]
+    ]
+},
+"jpe_2jz_cylinder_head_main": {
+    "information": {
+        "authors": "Jefe/JPE",
+        "name": "Cylinder Head",
+        "value": 0
+    },
+    "slotType": "jpe_2jz_cylinder_head_main",
+    "slots": [
+        ["type", "default", "description"],
+        ["jpe_2jz_valves", "jpe_2jz_valves_stock", "Valvetrain", {"coreSlot": true}],
+        ["jpe_2jz_cam", "jpe_2jz_cam_s", "Camshaft", {"coreSlot": true}]
+    ]
+},
+"jpe_2jz_valves_stock": {
+    "information": {
+        "authors": "Jefe/JPE",
+        "name": "Stock Shinsei Valvetrain",
+        "value": 500
+    },
+    "slotType": "jpe_2jz_valves",
+    "mainEngine": {}
+},
+"jpe_2jz_valves_stg1": {
+    "information": {
+        "authors": "Jefe/JPE",
+        "name": "SRD Street Valvetrain [8000rpm]",
+        "value": 1500
+    },
+    "slotType": "jpe_2jz_valves",
+    "mainEngine": {
+        "$+maxRPM": 750,
+        "$+maxPhysicalRPM": 750
+    }
+},
+"jpe_2jz_valves_stg2": {
+    "information": {
+        "authors": "Jefe/JPE",
+        "name": "SRD Race Valvetrain [8500rpm]",
+        "value": 2000
+    },
+    "slotType": "jpe_2jz_valves",
+    "mainEngine": {
+        "$+maxRPM": 1200,
+        "$+maxPhysicalRPM": 1200
+    }
+},
+"jpe_2jz_valves_stg3": {
+    "information": {
+        "authors": "Jefe/JPE",
+        "name": "SRD Max Effort Valvetrain [9000rpm+]",
+        "value": 2500
+    },
+    "slotType": "jpe_2jz_valves",
+    "mainEngine": {
+        "$+maxRPM": 2500,
+        "$+maxPhysicalRPM": 2500
+    }
+},
+"jpe_2jz_cam_s": {
+    "information": {
+        "authors": "Jefe/JPE",
+        "name": "Stock Shinsei Cams",
+        "value": 250
+    },
+    "slotType": "jpe_2jz_cam",
+    "mainEngine": {
+        "idleRPMVariance": 15,
+        "idleRPMVarianceFrequency": 12.5
+    }
+},
+"jpe_2jz_cam_m": {
+    "information": {
+        "authors": "Jefe/JPE",
+        "name": "SRD Street Cams",
+        "value": 750
+    },
+    "slotType": "jpe_2jz_cam",
+    "mainEngine": {
+        "torqueModPart23": [
+            ["rpm", "torque"],
+            [0, 0],
+            [250, 5],
+            [500, 10],
+            [1000, 15],
+            [1500, 15],
+            [2500, 25],
+            [3500, 25],
+            [4000, 30],
+            [5000, 30],
+            [6000, 30],
+            [7000, 30],
+            [8000, 40],
+            [9000, 40],
+            [10000, 30]
+        ],
+        "idleRPMVariance": 250,
+        "idleRPMVarianceFrequency": 12.5
+    }
+},
+"jpe_2jz_cam_a": {
+    "information": {
+        "authors": "Jefe/JPE",
+        "name": "SRD Race Cams",
+        "value": 1000
+    },
+    "slotType": "jpe_2jz_cam",
+    "mainEngine": {
+        "torqueModPart23": [
+            ["rpm", "torque"],
+            [0, 0],
+            [250, 10],
+            [500, 15],
+            [1000, 25],
+            [1500, 35],
+            [2500, 45],
+            [3500, 55],
+            [4000, 60],
+            [5000, 70],
+            [6000, 70],
+            [7000, 70],
+            [8000, 60],
+            [9000, 55],
+            [10000, 50]
+        ],
+        "idleRPMVariance": 350,
+        "idleRPMVarianceFrequency": 11.75
+    }
+}
+}

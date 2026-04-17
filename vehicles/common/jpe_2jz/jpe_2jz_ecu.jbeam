@@ -1,0 +1,108 @@
+{
+"jpe_2jz_ecu_stock": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Stock ECU",
+        "value":500
+    },
+    "slotType" : "jpe_2jz_ecu",
+    "mainEngine":{
+        "revLimiterRPM":7200,
+        "revLimiterType":"timeBased",
+        "revLimiterCutTime":0.11,
+        "$*instantAfterFireCoef": 1.10,
+        "$*sustainedAfterFireCoef": 1.05,
+        "particulates":0.01,
+        "exhaustFlameSizeCoef":1.5,
+        "exhaustFlameColorCoef":1.25
+    },
+    "turbocharger": {
+        "wastegateStart":10,
+        "wastegateLimit":11
+    }
+},
+"jpe_2jz_ecu_sport": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Aftermarket ECU",
+        "value":1000
+    },
+    "slotType" : "jpe_2jz_ecu",
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$revLimiterRPM", "range", "rpm", "Engine", 7800, 7200, 8500, "RPM Limit", "RPM where the rev limiter prevents further revving", {"stepDis":50}],
+        ["$boostTarget", "range", "psi", "Turbo", 18, 0, 25, "Boost Pressure", "Target turbo boost pressure", {"stepDis":0.5}]
+    ],
+    "mainEngine":{
+        "revLimiterRPM":"$revLimiterRPM",
+        "revLimiterType":"timeBased",
+        "revLimiterCutTime":0.10,
+        "$*instantAfterFireCoef": 1.10,
+        "$*sustainedAfterFireCoef": 1.05,
+        "particulates":0.01,
+        "exhaustFlameSizeCoef":1.5,
+        "exhaustFlameColorCoef":1.25
+    },
+    "turbocharger": {
+        "wastegateStart":"$boostTarget",
+        "wastegateLimit":"$=$boostTarget + 1"
+    },
+    "vehicleController": {
+        "highShiftUpRPM":"$=$revLimiterRPM - 200"
+    }
+},
+"jpe_2jz_ecu_race": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Standalone ECU",
+        "value":2000
+    },
+    "slotType" : "jpe_2jz_ecu",
+    "variables": [
+        ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
+        ["$idleRPMTarget", "range", "rpm", "Engine", 950, 700, 1400, "Idle RPM", "Target engine idle speed", {"stepDis":25}],
+        ["$twoStepRPM", "range", "rpm", "Engine", 3200, 1800, 6000, "2-Step RPM", "Launch control RPM limit", {"stepDis":50}],
+        ["$revLimiterRPM", "range", "rpm", "Engine", 8500, 5500, 10000, "RPM Limit", "RPM where the rev limiter prevents further revving", {"stepDis":50}],
+        ["$revLimiterCutTime", "range", "s", "Engine", 0.095, 0.01, 0.5, "RPM Limit Cut Time", "How fast the rev limiter cycles", {"stepDis":0.001}],
+        ["$gear1", "range", "psi", "Turbo", 20, 0, 80, "Boost 1st Gear", "Max boost in 1st gear", {"stepDis":0.5}],
+        ["$gear2", "range", "psi", "Turbo", 25, 0, 80, "Boost 2nd Gear", "Max boost in 2nd gear", {"stepDis":0.5}],
+        ["$gear3", "range", "psi", "Turbo", 30, 0, 80, "Boost 3rd Gear", "Max boost in 3rd gear", {"stepDis":0.5}],
+        ["$gear4", "range", "psi", "Turbo", 40, 0, 80, "Boost 4th Gear", "Max boost in 4th gear", {"stepDis":0.5}],
+        ["$gear5", "range", "psi", "Turbo", 50, 0, 80, "Boost 5th Gear", "Max boost in 5th gear", {"stepDis":0.5}],
+        ["$gear6", "range", "psi", "Turbo", 60, 0, 80, "Boost 6th Gear", "Max boost in 6th gear", {"stepDis":0.5}],
+        ["$gear7", "range", "psi", "Turbo", 70, 0, 80, "Boost 7th Gear", "Max boost in 7th gear", {"stepDis":0.5}],
+        ["$gear8", "range", "psi", "Turbo", 80, 0, 80, "Boost 8th Gear", "Max boost in 8th gear", {"stepDis":0.5}]
+    ],
+    "controller": [
+        ["fileName"],
+        ["twoStepLaunch", {"rpmLimit":"$twoStepRPM"}]
+    ],
+    "mainEngine":{
+        "idleRPM":"$idleRPMTarget",
+        "revLimiterRPM":"$revLimiterRPM",
+        "revLimiterType":"timeBased",
+        "revLimiterCutTime":"$revLimiterCutTime",
+        "$*instantAfterFireCoef": 1.15,
+        "$*sustainedAfterFireCoef": 1.075,
+        "particulates":0.015,
+        "exhaustFlameSizeCoef":2.0,
+        "exhaustFlameColorCoef":1.35
+    },
+    "turbocharger": {
+        "wastegateStart":["$gear1", "$gear2", "$gear3", "$gear4", "$gear5", "$gear6", "$gear7", "$gear8"],
+        "wastegateLimit":[
+            "$=$gear1 + 1",
+            "$=$gear2 + 1",
+            "$=$gear3 + 1",
+            "$=$gear4 + 1",
+            "$=$gear5 + 1",
+            "$=$gear6 + 1",
+            "$=$gear7 + 1",
+            "$=$gear8 + 1"
+        ]
+    },
+    "vehicleController": {
+        "highShiftUpRPM":"$=$revLimiterRPM - 200"
+    }
+}
+}

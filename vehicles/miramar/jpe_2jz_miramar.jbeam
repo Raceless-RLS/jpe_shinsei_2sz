@@ -8,14 +8,9 @@
     "slotType" : "miramar_engine",
     "slots": [
         ["type", "default", "description"],
-        ["jpe_2jz_internals","jpe_2jz_internals", "Engine Internals", {"coreSlot":true}],		
-        ["miramar_jpe_2jz_miramar_turbo","miramar_jpe_2jz_miramar_turbo_stock", "Turbo", {"coreSlot":true}],
-        ["miramar_jpe_2jz_oilpan","miramar_jpe_2jz_oilpan1", "Oil Pan", {"coreSlot":true}],
-        ["miramar_exhaust_jpe_2jz_main","miramar_exhaust_jpe_2jz_main", "Exhaust"],
-        ["jpe_2jz_ecu","jpe_2jz_ecu_stock", "Engine Management", {"coreSlot":true}],
-        ["miramar_enginemounts","miramar_enginemounts", "Engine Mounts", {"coreSlot":true}],		
+        ["miramar_jpe_2jz_bottom_end","miramar_jpe_2jz_bottom_end", "Engine Bottom End", {"coreSlot":true}],
+        ["miramar_jpe_2jz_top_end","miramar_jpe_2jz_top_end", "Engine Top End", {"coreSlot":true}],
         ["miramar_transmission","miramar_transmission_4M", "Transmission"],
-        ["miramar_jpe_2jz_engine_cover_main","miramar_jpe_2jz_engine_cover_main", "Engine Cover", {"coreSlot":true}],	
         ["n2o_system","", "Nitrous Oxide System"],		
     ],
     "powertrain": [
@@ -320,6 +315,47 @@
         ["type", "default", "description"],
         ["miramar_jpe_2jz_engine_cover","miramar_jpe_2jz_engine_cover_s", "Engine Cover Style"],		
         ["miramar_jpe_2jz_cam_pulley","miramar_jpe_2jz_cam_pulley_s", "Cam Pulley Style"],		
+	    ],
+	},
+"miramar_jpe_2jz_bottom_end": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Engine Bottom End",
+        "value":0,
+    },
+    "slotType" : "miramar_jpe_2jz_bottom_end",
+    "slots": [
+        ["type", "default", "description"],
+        ["jpe_2jz_bottom_end_main","jpe_2jz_bottom_end_main", "Bottom End", {"coreSlot":true}],
+        ["miramar_jpe_2jz_oilpan","miramar_jpe_2jz_oilpan1", "Oil Pan", {"coreSlot":true}],
+        ["miramar_enginemounts","miramar_enginemounts", "Engine Mounts", {"coreSlot":true}]
+    ],
+},
+"miramar_jpe_2jz_top_end": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Engine Top End",
+        "value":0,
+    },
+    "slotType" : "miramar_jpe_2jz_top_end",
+    "slots": [
+        ["type", "default", "description"],
+        ["jpe_2jz_cylinder_head_main","jpe_2jz_cylinder_head_main", "Cylinder Head", {"coreSlot":true}],
+        ["jpe_2jz_ecu","jpe_2jz_ecu_stock", "Engine Management", {"coreSlot":true}],
+        ["miramar_jpe_2jz_aspiration_main","miramar_jpe_2jz_aspiration_main", "Aspiration", {"coreSlot":true}],
+        ["miramar_jpe_2jz_engine_cover_main","miramar_jpe_2jz_engine_cover_main", "Engine Cover", {"coreSlot":true}]
+    ],
+},
+"miramar_jpe_2jz_aspiration_main": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Turbocharger",
+        "value":0,
+    },
+    "slotType" : "miramar_jpe_2jz_aspiration_main",
+    "slots": [
+        ["type", "default", "description"],
+        ["miramar_jpe_2jz_intake_manifold","miramar_jpe_2jz_turbo_type_twin", "Intake Manifold", {"coreSlot":true}]
     ],
 },
 "miramar_jpe_2jz_engine_cover_s": {

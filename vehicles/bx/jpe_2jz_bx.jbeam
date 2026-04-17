@@ -8,16 +8,9 @@
     "slotType" : "bx_engine",
     "slots": [
         ["type", "default", "description"],
-        ["jpe_2jz_internals","jpe_2jz_internals", "Engine Internals", {"coreSlot":true}],		
-        ["jpe_2jz_turbo","jpe_2jz_turbo_stock", "Turbo", {"coreSlot":true}],
-        ["bx_oilpan_i4","bx_oilpan_i4", "Oil Pan", {"coreSlot":true}],
-        ["bx_exhaust_i4","bx_exhaust_i4", "Exhaust"],
-        ["jpe_2jz_ecu","jpe_2jz_ecu_stock", "Engine Management", {"coreSlot":true}],
-        ["bx_enginemounts","bx_enginemounts", "Engine Mounts", {"coreSlot":true}],		
+        ["jpe_2jz_bx_bottom_end","jpe_2jz_bx_bottom_end", "Engine Bottom End", {"coreSlot":true}],
+        ["jpe_2jz_bx_top_end","jpe_2jz_bx_top_end", "Engine Top End", {"coreSlot":true}],
         ["bx_transmission","bx_transmission_5M", "Transmission"],
-        ["bx_radiator_jpe2jz","bx_radiator_jpe2jz", "Radiator"],
-        ["bx_oilcooler","", "Oil Cooler"],
-        ["jpe_2jz_engine_cover_main","jpe_2jz_engine_cover_main", "Engine Cover", {"coreSlot":true}],	
         ["n2o_system","", "Nitrous Oxide System"],		
     ],
     "powertrain": [
@@ -69,15 +62,15 @@
         "sustainedAfterFireSound": "event:>Vehicle>Afterfire>i5_01>multi",
         "shiftAfterFireSound": "event:>Vehicle>Afterfire>i5_01>shift",
         "particulates":0.015,
-        "afterFireAudibleThresholdInstant": 500000,
-        "instantAfterFireCoef": 0.75,
-        "instantAfterFireVolumeCoef": 0.9,
-        "afterFireAudibleThresholdShift": 150000,
-        "shiftAfterFireVolumeCoef": 0.9,
-        "afterFireAudibleThresholdSustained": 40000,
+        "afterFireAudibleThresholdInstant": 5000,
+        "instantAfterFireCoef": 1.0,
+        "instantAfterFireVolumeCoef": 1.75,
+        "afterFireAudibleThresholdShift": 5000,
+        "shiftAfterFireVolumeCoef": 2.0,
+        "afterFireAudibleThresholdSustained": 7000,
         "sustainedAfterFireCoef": 0.9,
         "sustainedAfterFireTime": 0.8,
-        "sustainedAfterFireVolumeCoef": 0.7,	
+        "sustainedAfterFireVolumeCoef": 0.85,	
 
         //cooling and oil system
         "thermalsEnabled":true,
@@ -352,6 +345,49 @@
         ["mesh", "[group]:", "nonFlexMaterials"],
         ["jpe_2jz_engine_cover_cut_c", ["bx_engine"]],
         {"deformGroup":""},
+	    ],
+	},
+"jpe_2jz_bx_bottom_end": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Engine Bottom End",
+        "value":0,
+    },
+    "slotType" : "jpe_2jz_bx_bottom_end",
+    "slots": [
+        ["type", "default", "description"],
+        ["jpe_2jz_bottom_end_main","jpe_2jz_bottom_end_main", "Bottom End", {"coreSlot":true}],
+        ["bx_oilpan_i4","bx_oilpan_i4", "Oil Pan", {"coreSlot":true}],
+        ["bx_radiator_jpe2jz","bx_radiator_jpe2jz", "Cooling Fan"],
+        ["bx_oilcooler","", "Oil Cooler"],
+        ["bx_enginemounts","bx_enginemounts", "Engine Mounts", {"coreSlot":true}]
+    ],
+},
+"jpe_2jz_bx_top_end": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Engine Top End",
+        "value":0,
+    },
+    "slotType" : "jpe_2jz_bx_top_end",
+    "slots": [
+        ["type", "default", "description"],
+        ["jpe_2jz_cylinder_head_main","jpe_2jz_cylinder_head_main", "Cylinder Head", {"coreSlot":true}],
+        ["jpe_2jz_ecu","jpe_2jz_ecu_stock", "Engine Management", {"coreSlot":true}],
+        ["jpe_2jz_bx_aspiration_main","jpe_2jz_bx_aspiration_main", "Aspiration", {"coreSlot":true}],
+        ["jpe_2jz_engine_cover_main","jpe_2jz_engine_cover_main", "Engine Cover", {"coreSlot":true}]
+    ],
+},
+"jpe_2jz_bx_aspiration_main": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Turbocharger",
+        "value":0,
+    },
+    "slotType" : "jpe_2jz_bx_aspiration_main",
+    "slots": [
+        ["type", "default", "description"],
+        ["jpe_2jz_bx_intake_manifold","jpe_2jz_bx_turbo_type_twin", "Intake Manifold", {"coreSlot":true}]
     ],
 },
 "jpe_2jz_cam_pulley_s": {

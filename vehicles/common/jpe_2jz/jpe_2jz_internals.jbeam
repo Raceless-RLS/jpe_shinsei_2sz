@@ -28,7 +28,7 @@
     "information": {
         "authors": "Jefe/JPE",
         "name": "Stock Shinsei Long Block",
-        "value": 625
+        "value": 1625
     },
     "slotType": "bx_engine_block_i6_jefe",
     "slots": [
@@ -48,7 +48,7 @@
     "information": {
         "authors": "Jefe/JPE",
         "name": "SRD Forged Long Block",
-        "value": 1250
+        "value": 6250
     },
     "slotType": "bx_engine_block_i6_jefe",
     "slots": [
@@ -81,7 +81,7 @@
     "information": {
         "authors": "Jefe/JPE",
         "name": "SRD Billet Long Block",
-        "value": 2500
+        "value": 12500
     },
     "slotType": "bx_engine_block_i6_jefe",
     "slots": [
@@ -157,7 +157,7 @@
     "information": {
         "authors": "RLS Team/Jefe",
         "name": "Stage 3 Sleeves (+100%)",
-        "value": 13600
+        "value": 6500
     },
     "slotType": "jpe_2jz_sleeves",
     "mainEngine": {
@@ -174,7 +174,7 @@
     "information": {
         "authors": "RLS Team/Jefe",
         "name": "Stage 4 Sleeves (+200%)",
-        "value": 25600
+        "value": 9600
     },
     "slotType": "jpe_2jz_sleeves",
     "mainEngine": {

@@ -1,0 +1,310 @@
+{
+"jpe_2jz_etki_engine": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"3.0L Shinsei 2SZ-GTE Engine",
+        "value":3500,
+    },
+    "slotType" : "etki_engine",
+    "slots": [
+        ["type", "default", "description"],
+        ["jpe_2jz_internals","jpe_2jz_internals", "Engine Bottom End", {"coreSlot":true}],
+        ["n2o_system","", "Nitrous Oxide System"],
+        ["etki_transmission","etki_transmission_5M", "Transmission"],
+    ],
+    "powertrain": [
+        ["type", "name", "inputName", "inputIndex"],
+        ["combustionEngine", "mainEngine", "dummy", 0],
+    ],
+    "mainEngine": {
+        "torque":[
+            ["rpm", "torque"],
+            [0, 0],
+            [500, 110],
+            [1000, 205],
+            [2000, 260],
+            [2500, 272],
+            [3000, 280],
+            [4000, 289],
+            [5000, 286],
+            [6000, 243],
+            [7000, 146],
+            [8000, 120],
+        ],
+
+        "idleRPM":850,
+        "maxRPM":6000,
+        "inertia":0.145,
+        "friction":16,
+        "dynamicFriction":0.023,
+        "engineBrakeTorque":50,
+        //"burnEfficiency":0.34
+        "burnEfficiency":[
+            [0, 0.10],
+            [0.05, 0.21],
+            [0.4, 0.38],
+            [0.7, 0.44],
+            [1, 0.30],
+        ],
+        //fuel system
+        "energyStorage": ["mainTank","auxTank"],
+        "requiredEnergyType":"gasoline",
+
+        //exhaust
+        "instantAfterFireSound": "event:>Vehicle>Afterfire>i6_01>single",
+        "sustainedAfterFireSound": "event:>Vehicle>Afterfire>i6_01>multi",
+        "shiftAfterFireSound": "event:>Vehicle>Afterfire>i6_01>shift",
+        "particulates":0.03,
+        "afterFireAudibleThresholdInstant": 500000,
+        "instantAfterFireCoef": 0.6,
+        "instantAfterFireVolumeCoef": 0.9,
+        "afterFireAudibleThresholdShift": 150000,
+        "shiftAfterFireVolumeCoef": 0.8,
+        "afterFireAudibleThresholdSustained": 40000,
+        "sustainedAfterFireCoef": 0.5,
+        "sustainedAfterFireTime": 0.8,
+        "sustainedAfterFireVolumeCoef": 0.5,
+
+        //cooling and oil system
+        "thermalsEnabled":true,
+        "engineBlockMaterial":"aluminum",
+        "oilVolume":5,
+        "engineBlockAirCoolingEfficiency":30,
+
+        //engine durability
+        "cylinderWallTemperatureDamageThreshold":140,
+        "headGasketDamageThreshold":1500000,
+        "pistonRingDamageThreshold":1500000,
+        "connectingRodDamageThreshold":2000000,
+        "maxTorqueRating": 440,
+        "maxOverTorqueDamage": 350,
+
+        //node beam interface
+        "torqueReactionNodes:":["e1l","e2l","e4r"],
+        "waterDamage": {"[engineGroup]:":["engine_intake"]},
+        "radiator": {"[engineGroup]:":["radiator"]},
+        "engineBlock": {"[engineGroup]:":["engine_block"]},
+        "breakTriggerBeam":"engine",
+        "uiName":"Engine",
+        "soundConfig": "soundConfig",
+        "soundConfigExhaust": "soundConfigExhaust",
+
+        //starter motor
+        "starterSample":"event:>Engine>Starter>i6_2007_eng",
+        "starterSampleExhaust":"event:>Engine>Starter>i6_2007_exh",
+        "shutOffSampleEngine":"event:>Engine>Shutoff>i6_2007_eng",
+        "shutOffSampleExhaust":"event:>Engine>Shutoff>i6_2007_exh",
+        "starterVolume":0.76,
+        "starterVolumeExhaust":0.76,
+        "shutOffVolumeEngine":0.76,
+        "shutOffVolumeExhaust":0.76,
+        "idleRPMStartRate":1,
+        "idleRPMStartCoef":1.25,
+
+        //engine deform groups
+        "deformGroups":["mainEngine", "mainEngine_intake", "mainEngine_accessories"]
+        "deformGroups_oilPan":["oilpan_damage"]
+    },
+    "soundConfig": {
+        "sampleName": "I6_2_engine",
+        "intakeMuffling": 1,
+
+        "mainGain": -5.5,
+        "onLoadGain":1,
+        "offLoadGain":0.60,
+
+        "maxLoadMix": 0.75,
+        "minLoadMix": 0.1,
+
+        "lowShelfGain":-3,
+        "lowShelfFreq":180,
+
+        "highShelfGain":4,
+        "highShelfFreq":6000,
+
+        "eqLowGain": 0,
+        "eqLowFreq": 450,
+        "eqLowWidth": 0.2,
+
+        "eqHighGain": -8,
+        "eqHighFreq": 1500,
+        "eqHighWidth": 0.2,
+
+        "fundamentalFrequencyCylinderCount":6,
+        "eqFundamentalGain": -5,
+    },
+    "soundConfigExhaust": {
+        "sampleName": "I6_2_exhaust",
+
+        "mainGain": 2.5,
+        "onLoadGain":1,
+        "offLoadGain":0.50,
+
+        "maxLoadMix": 0.75,
+        "minLoadMix": 0.1,
+
+        "lowShelfGain":-2,
+        "lowShelfFreq":300,
+
+        "highShelfGain":-8,
+        "highShelfFreq":4000,
+
+        "eqLowGain": -6,
+        "eqLowFreq": 1200,
+        "eqLowWidth": 0.2,
+
+        "eqHighGain": -3,
+        "eqHighFreq": 3000,
+        "eqHighWidth": 0.2,
+
+        "fundamentalFrequencyCylinderCount":6,
+        "eqFundamentalGain": -2,
+    },
+    "vehicleController": {
+        "clutchLaunchStartRPM":1500,
+        "clutchLaunchTargetRPM":2000,
+        //**highShiftDown can be overwritten by automatic transmissions**
+        "highShiftDownRPM":[0,0,0,2200,3400,3900,4100,4200],
+        //**highShiftUp can be overwritten by intake modifications**
+        "highShiftUpRPM":5800,
+    },
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["etki_engine_i6", ["etki_engine"],[]],
+    ],
+    "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+        ["rpmspin", "etki_engine_i6_pulley_a", "e2r","e2l","e4r", {"x":-3, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360, 360, 0, 1],
+        ["rpmspin", "etki_engine_i6_pulley_b", "e2r","e2l","e4r", {"x":-3, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -720, 720, 0, 1.5],
+        ["rpmspin", "etki_engine_i6_pulley_c", "e2r","e2l","e4r", {"x":-3, "y":0, "z":0}, {"x":0, "y":2, "z":0}, {"x":0, "y":0, "z":0}, -540, 540, 0, 1.0],
+        ["rpmspin", "etki_engine_fan",         "e2r","e2l","e4r", {"x":-3, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -540, 540, 0, 1.5],
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true},
+         {"group":"etki_engine"},
+         {"nodeWeight":24},
+         {"engineGroup":"engine_block"},
+         {"chemEnergy":2000,"burnRate":0.39,"flashPoint":800,"specHeat": 0.2,"selfIgnitionCoef":false,"smokePoint":600,"baseTemp":500,"conductionRadius":0.15},
+         ["e1r", -0.11, -1.0, 0.22],
+         ["e1l", 0.16, -1.0, 0.22],
+         ["e2r", -0.11, -1.59, 0.22],
+         ["e2l", 0.16, -1.59, 0.22],
+         {"engineGroup":["engine_block","engine_intake"]},
+         ["e3r", -0.24, -1.0, 0.69],
+         ["e3l", 0.09, -1.0, 0.75],
+         ["e4r", -0.24, -1.59, 0.69, {"isExhaust":"mainEngine"}],
+         ["e4l", 0.09, -1.59, 0.75],
+         {"chemEnergy":false,"burnRate":false,"flashPoint":false, "specHeat": false,"selfIgnitionCoef":false,"smokePoint":false,"baseTemp":false,"conductionRadius":false},
+         {"engineGroup":""},
+         {"group":""},
+         //engine mount nodes
+         ["em1r", -0.22, -1.47, 0.42, {"nodeWeight":3}],
+         ["em1l", 0.22, -1.47, 0.42, {"nodeWeight":3}],
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":20001000,"beamDamp":500},
+          {"beamDeform":250000,"beamStrength":"FLT_MAX"},
+          //engine
+          {"deformGroup":"mainEngine", "deformationTriggerRatio":0.001}
+          ["e1r","e1l"],
+          ["e2r","e2l"],
+          ["e3r","e3l"],
+          ["e4r","e4l"],
+
+          ["e1r","e2r"],
+          ["e1l","e2l"],
+          ["e3r","e4r"],
+          ["e3l","e4l"],
+
+          ["e1r","e3r"],
+          ["e1l","e3l"],
+          ["e2r","e4r"],
+          ["e2l","e4l"],
+
+          ["e2r","e3r"],
+          ["e2l","e3l"],
+          ["e2r","e3l"],
+          ["e2l","e3r"],
+
+          ["e1r","e4r", {"isExhaust":"mainEngine"}],
+          ["e1l","e4l"],
+          ["e1r","e4l"],
+          ["e1l","e4r"],
+
+          ["e1r","e2l"],
+          ["e1l","e2r"],
+          ["e3r","e4l"],
+          ["e3l","e4r"],
+
+          //engine mount nodes
+          {"beamSpring":3400000,"beamDamp":150},
+          {"beamDeform":90000,"beamStrength":"FLT_MAX"},
+          ["em1r","e3l"],
+          ["em1r","e3r"],
+          ["em1r","e4l"],
+          ["em1r","e4r"],
+          ["em1r", "e1r"],
+          ["em1r", "e1l"],
+          ["em1r", "e2l"],
+          ["em1r", "e2r"],
+
+          ["em1l","e3l"],
+          ["em1l","e3r"],
+          ["em1l","e4l"],
+          ["em1l","e4r"],
+          ["em1l", "e1r"],
+          ["em1l", "e1l"],
+          ["em1l", "e2l"],
+          ["em1l", "e2r"],
+          {"deformGroup":"", "deformationTriggerRatio":"", "deformationTriggerRatio":""},
+
+          {"beamSpring":25000,"beamDamp":50},
+          {"beamDeform":2000,"beamStrength":8000},
+          //rad tube beams
+          {"breakGroup":"radtube"},
+          ["e4r","f15l"],
+          ["e4r","f15"],
+          ["e4l","f15r"],
+          ["e4l","f15"],
+          ["e2r","f11l"],
+          ["e2r","f11"],
+          ["e2l","f11r"],
+          ["e2l","f11"],
+          {"breakGroup":""},
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+    "triangles": [
+            ["id1:","id2:","id3:"],
+            {"groundModel":"metal"},
+            /*
+            ["e5l", "e1l", "e3l"],
+            ["e4r", "e3r", "e2r"],
+            ["e3r", "e1r", "e2r"],
+            ["e1r", "e1l", "e2r"],
+            ["e2r", "e1l", "e2l"],
+            ["e3l", "e1l", "e3r"],
+            ["e3r", "e1l", "e1r"],
+            ["e4r", "e4l", "e3l"],
+            ["e4r", "e3l", "e3r"],
+            ["e4r", "e2r", "e4l"],
+            ["e4l", "e2r", "e2l"],
+            ["e4l", "e2l", "e6l"],
+            ["e6l", "e3l", "e4l"],
+            ["e6l", "e2l", "e5l"],
+            ["e6l", "e5l", "e3l"],
+            ["e2l", "e1l", "e5l"],
+            */
+            {"triangleType":"NONCOLLIDABLE"},
+            ["e2l", "e2r", "e1r"],
+            ["e1r", "e1l", "e2l"],
+            {"triangleType":"NORMALTYPE"},
+    ],
+},
+
+}

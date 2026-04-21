@@ -8,8 +8,8 @@
     "slotType" : "etki_engine",
     "slots": [
         ["type", "default", "description"],
-        ["jpe_2jz_bx_bottom_end","jpe_2jz_bx_bottom_end", "Engine Bottom End", {"coreSlot":true}],
-        ["jpe_2jz_bx_top_end","jpe_2jz_bx_top_end", "Engine Top End", {"coreSlot":true}],
+        ["jpe_2jz_bottom_end","jpe_2jz_bottom_end", "Engine Bottom End", {"coreSlot":true}],
+        ["jpe_2jz_top_end","jpe_2jz_top_end", "Engine Top End", {"coreSlot":true}],
         ["n2o_system","", "Nitrous Oxide System"],
         ["etki_transmission","etki_transmission_5M", "Transmission"],
     ],

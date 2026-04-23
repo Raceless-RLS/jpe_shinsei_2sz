@@ -1,24 +1,32 @@
 {
-"etki_radiator": {
+"etki_jpe_2jz_radiator_main": {
     "information":{
-        "authors":"BeamNG",
-        "name":"Radiator",
-        "value":430,
+        "authors":"Jefe/JPE",
+        "name":"Shinsei 2SZ Radiators",
+        "value":0,
     },
     "slotType" : "etki_radiator",
+	"slots": [
+        ["type", "default", "description"],
+        ["jpe_2jz_etki_radiator","etki_jpe_2jz_radiator","Radiator Type", {"coreSlot":true}],
+		
+    ],
+},    
+"etki_jpe_2jz_radiator": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Stock Radiator",
+        "value":500,
+    },
+    "slotType" : "jpe_2jz_etki_radiator",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         {"deformGroup":"radhose_damage", "deformMaterialBase":"etki_mechanicals", "deformMaterialDamaged":"invis"},
-         ["etki_radtubes", ["etki_engine","etki_radiator"]],
-         {"deformGroup":"", "deformationTriggerRatio":""},
-
-         ["etki_radiator", ["etki_radiator"]],
-         ["etki_radiatorshroud", ["etki_radiator"]],
+         ["etki_jpe_2jz_radiator", ["etki_radiator"]],
     ],
     "mainEngine":{
-        "radiatorArea":0.34,
-        "radiatorEffectiveness":7500,
-        "coolantVolume":8,
+        "radiatorArea":0.32,
+        "radiatorEffectiveness":7000,
+        "coolantVolume":6.5,
         "radiatorFanType":"electric",
         "radiatorFanTemperature":100,
         "radiatorFanMaxAirSpeed":2,
@@ -27,7 +35,7 @@
         "radiatorFanVolume": 0.4,
 
         //damage deformGroups
-        "deformGroups_radiator":["radiator_damage", "radhose_damage"],
+        "deformGroups_radiator":["radiator_damage", "radhose_damage"]
         },
     "nodes": [
          ["id", "posX", "posY", "posZ"],
@@ -100,26 +108,21 @@
         {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
     ],
 },
-"etki_radiator_race": {
+"etki_jpe_2jz_etki_radiator_race": {
     "information":{
-        "authors":"BeamNG",
+        "authors":"Jefe/JPE",
         "name":"High Performance Radiator",
-        "value":870,
+        "value":750,
     },
-    "slotType" : "etki_radiator",
+    "slotType" : "jpe_2jz_etki_radiator",
     "flexbodies": [
          ["mesh", "[group]:", "nonFlexMaterials"],
-         {"deformGroup":"radhose_damage", "deformMaterialBase":"etki_mechanicals", "deformMaterialDamaged":"invis"},
-         ["etki_radtubes", ["etki_engine","etki_radiator"]],
-         {"deformGroup":"", "deformationTriggerRatio":""},
-
-         ["etki_radiator", ["etki_radiator"]],
-         ["etki_radiatorshroud", ["etki_radiator"]],
+         ["etki_jpe_2jz_radiator", ["etki_radiator"]],
     ],
     "mainEngine":{
-        "radiatorArea":0.34,
+        "radiatorArea":0.32,
         "radiatorEffectiveness":13000,
-        "coolantVolume":9,
+        "coolantVolume":7.5,
         "radiatorFanType":"electric",
         "radiatorFanTemperature":100,
         "radiatorFanMaxAirSpeed":3,
@@ -128,7 +131,103 @@
         "radiatorFanVolume": 0.6,
 
         //damage deformGroups
-        "deformGroups_radiator":["radiator_damage", "radhose_damage"],
+        "deformGroups_radiator":["radiator_damage", "radhose_damage"]
+        },
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //radiator
+         {"frictionCoef":0.5},
+         {"nodeMaterial":"|NM_METAL"},
+         {"selfCollision":false},
+         {"collision":true},
+         {"group":"etki_radiator"},
+         {"nodeWeight":2.7},
+         {"engineGroup":"radiator"},
+         {"chemEnergy":200,"burnRate":0.4,"flashPoint":250,"specHeat":0.8,"smokePoint":150,"selfIgnitionCoef":false},
+         ["rad1", 0.0, -1.8, 0.74],
+         {"chemEnergy":false,"burnRate":false,"flashPoint":false,"specHeat":false,"smokePoint":false,"selfIgnitionCoef":false},
+         ["rad2", 0.0, -1.8, 0.34],
+         {"engineGroup":""},
+         {"group":""},
+    ],
+    "beams": [
+        ["id1:",  "id2:"],
+        {"beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+        {"beamSpring":701000,"beamDamp":70},
+        {"beamDeform":7500,"beamStrength":"FLT_MAX"},
+        {"deformGroup":"radiator_damage","deformationTriggerRatio":0.05},
+        //radiator
+        {"deformLimitExpansion":1.1},
+        ["rad2",  "rad1"],
+        ["rad1",  "f15"],
+        ["rad1",  "f15r"],
+        ["rad1",  "f13rr"],
+        ["rad1",  "f11rr"],
+        ["rad1",  "f15l"],
+        ["rad1",  "f13ll"],
+        ["rad1",  "f11ll"],
+        ["rad2",  "f11rr"],
+        ["rad2",  "f13rr"],
+        ["rad2",  "f11ll"],
+        ["rad2",  "f13ll"],
+        {"deformLimitExpansion":""},
+
+        //radiator hoses
+        {"beamSpring":15000,"beamDamp":300},
+        {"beamDeform":1450,"beamStrength":3600},
+        {"deformGroup":"radhose_damage","deformationTriggerRatio":0.02},
+        {"optional":true},
+        ["rad1", "e2r"],
+        ["rad2", "e2r"],
+        ["f11r", "e2r"],
+        ["f13r", "e2r"],
+        ["f15r", "e2r"],
+        ["rad1", "e4r"],
+        ["rad2", "e4r"],
+        ["f11r", "e4r"],
+        ["f13r", "e4r"],
+        ["f15r", "e4r"],
+
+        ["rad1", "e2l"],
+        ["rad2", "e2l"],
+        ["f11l", "e2l"],
+        ["f13l", "e2l"],
+        ["f15l", "e2l"],
+        ["rad1", "e4l"],
+        ["rad2", "e4l"],
+        ["f11l", "e4l"],
+        ["f13l", "e4l"],
+        ["f15l", "e4l"],
+        {"optional":false},
+        {"deformGroup":"", "deformationTriggerRatio":""},
+
+        {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"etki_jpe_2jz_etki_radiator_race2": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Ultra Performance Radiator",
+        "value":1250,
+    },
+    "slotType" : "jpe_2jz_etki_radiator",
+    "flexbodies": [
+         ["mesh", "[group]:", "nonFlexMaterials"],
+         ["etki_jpe_2jz_radiator", ["etki_radiator"]],
+    ],
+    "mainEngine":{
+        "radiatorArea":0.40,
+        "radiatorEffectiveness":27500,
+        "coolantVolume":10,
+        "radiatorFanType":"electric",
+        "radiatorFanTemperature":50,
+        "radiatorFanMaxAirSpeed":3,
+        "thermostatTemperature":90,
+        "radiatorFanLoopEvent": "event:>Vehicle>Cooling Fan>Electric_05",
+        "radiatorFanVolume": 0.6,
+
+        //damage deformGroups
+        "deformGroups_radiator":["radiator_damage", "radhose_damage"]
         },
     "nodes": [
          ["id", "posX", "posY", "posZ"],

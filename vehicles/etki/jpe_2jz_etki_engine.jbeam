@@ -8,8 +8,8 @@
     "slotType" : "etki_engine",
     "slots": [
         ["type", "default", "description"],
-        ["jpe_2jz_bottom_end","jpe_2jz_bottom_end", "Engine Bottom End", {"coreSlot":true}],
-        ["jpe_2jz_top_end","jpe_2jz_top_end", "Engine Top End", {"coreSlot":true}],
+        ["etki_jpe_2jz_bottom_end","etki_jpe_2jz_bottom_end", "Engine Bottom End", {"coreSlot":true}],
+        ["etki_jpe_2jz_top_end","etki_jpe_2jz_top_end", "Engine Top End", {"coreSlot":true}],
         ["n2o_system","", "Nitrous Oxide System"],
         ["etki_transmission","etki_transmission_5M", "Transmission"],
     ],
@@ -174,16 +174,16 @@
     },	
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
-        ["jpe_2jz_etki_block", ["etki_engine"],[]],
+        ["etki_jpe_2jz_block", ["etki_engine"],[]],
     ],
     "props": [
         ["func",            "mesh",                   "idRef:", "idX:", "idY:", "baseRotation",          "rotation",            "translation",         "min", "max", "offset", "multiplier"],
-        ["rpmspin",             "jpe_2jz_etki_pulley_1",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,  360,   0,        1],
-        ["rpmspin",             "jpe_2jz_etki_pulley_2",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,  360,   0,       -1],
-        ["rpmspin",             "jpe_2jz_etki_pulley_3",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,  360,   0,        1],
-        ["rpmspin",             "jpe_2jz_etki_pulley_4",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,  360,   0,        1],
-        ["rpmspin",             "jpe_2jz_etki_pulley_5",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,  360,   0,        1],
-        ["rpmspin",             "jpe_2jz_etki_pulley_6",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -1440,  1440, 0,        4],
+        ["rpmspin",             "etki_jpe_2jz_pulley_1",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,  360,   0,        1],
+        ["rpmspin",             "etki_jpe_2jz_pulley_2",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,  360,   0,       -1],
+        ["rpmspin",             "etki_jpe_2jz_pulley_3",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,  360,   0,        1],
+        ["rpmspin",             "etki_jpe_2jz_pulley_4",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,  360,   0,        1],
+        ["rpmspin",             "etki_jpe_2jz_pulley_5",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,  360,   0,        1],
+        ["rpmspin",             "etki_jpe_2jz_pulley_6",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -1440,  1440, 0,        4],
 
     ],	
     "nodes": [
@@ -313,5 +313,136 @@
             {"triangleType":"NORMALTYPE"},
     ],
 },
-
+"etki_jpe_2jz_engine_cover_main": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Engine Cover ",
+        "value":0,
+    },
+    "slotType" : "etki_jpe_2jz_engine_cover_main",
+    "slots": [
+        ["type", "default", "description"],
+        ["etki_jpe_2jz_engine_cover","etki_jpe_2jz_engine_cover_s", "Engine Cover Style"],		
+        ["etki_jpe_2jz_cam_pulley","etki_jpe_2jz_cam_pulley_s", "Cam Pulley Style"],		
+	    ],
+	},
+"etki_jpe_2jz_bottom_end": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Engine Bottom End",
+        "value":0,
+    },
+    "slotType" : "etki_jpe_2jz_bottom_end",
+    "slots": [
+        ["type", "default", "description"],
+        ["jpe_2jz_bottom_end_main","jpe_2jz_bottom_end_main", "Bottom End", {"coreSlot":true}],
+        ["etki_jpe_2jz_oilpan","etki_jpe_2jz_oilpan1", "Oil Pan", {"coreSlot":true}],
+        ["etki_enginemounts","etki_enginemounts", "Engine Mounts", {"coreSlot":true}]
+    ],
+},
+"etki_jpe_2jz_top_end": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Engine Top End",
+        "value":0,
+    },
+    "slotType" : "etki_jpe_2jz_top_end",
+    "slots": [
+        ["type", "default", "description"],
+        ["jpe_2jz_cylinder_head_main","jpe_2jz_cylinder_head_main", "Cylinder Head", {"coreSlot":true}],
+        ["jpe_2jz_ecu","jpe_2jz_ecu_stock", "Engine Management", {"coreSlot":true}],
+        ["etki_jpe_2jz_aspiration_main","etki_jpe_2jz_aspiration_main", "Aspiration", {"coreSlot":true}],
+        ["etki_jpe_2jz_engine_cover_main","etki_jpe_2jz_engine_cover_main", "Engine Cover", {"coreSlot":true}]
+    ],
+},
+"etki_jpe_2jz_aspiration_main": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Turbocharger",
+        "value":0,
+    },
+    "slotType" : "etki_jpe_2jz_aspiration_main",
+    "slots": [
+        ["type", "default", "description"],
+        ["etki_jpe_2jz_intake_manifold","etki_jpe_2jz_turbo_type_twin", "Intake Manifold", {"coreSlot":true}]
+    ],
+},
+"etki_jpe_2jz_engine_cover_s": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Stock Engine Cover",
+        "value":100,
+    },
+    "slotType" : "etki_jpe_2jz_engine_cover",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["etki_jpe_2jz_engine_cover", ["etki_engine"]],
+        {"deformGroup":""},
+    ],
+},
+"etki_jpe_2jz_engine_cover_c": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Cut Engine Cover",
+        "value":50,
+    },
+    "slotType" : "etki_jpe_2jz_engine_cover",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["etki_jpe_2jz_engine_cover_cut", ["etki_engine"]],
+        {"deformGroup":""},
+    ],
+},
+"etki_jpe_2jz_engine_cover_sc": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Body Color Engine Cover",
+        "value":200,
+    },
+    "slotType" : "etki_jpe_2jz_engine_cover",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["etki_jpe_2jz_engine_cover_c", ["etki_engine"]],
+        {"deformGroup":""},
+    ],
+},
+"etki_jpe_2jz_engine_cover_cc": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Body Color Cut Engine Cover",
+        "value":150,
+    },
+    "slotType" : "etki_jpe_2jz_engine_cover",
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["etki_jpe_2jz_engine_cover_cut_c", ["etki_engine"]],
+        {"deformGroup":""},
+    ],
+},
+"etki_jpe_2jz_cam_pulley_s": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Stock Cam Pulleys",
+        "value":250,
+    },
+    "slotType" : "etki_jpe_2jz_cam_pulley",
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        ["rpmspin",             "etki_jpe_2jz_cam_pulley_1",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,  360,   0,        1],
+        ["rpmspin",             "etki_jpe_2jz_cam_pulley_2",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,  360,   0,       -1],
+    ],
+},	
+"etki_jpe_2jz_cam_pulley_b": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Billet Cam Pulleys",
+        "value":550,
+    },
+    "slotType" : "etki_jpe_2jz_cam_pulley",
+    "props": [
+        ["func"      , "mesh"              , "idRef:", "idX:", "idY:"            , "baseRotation"        , "rotation"                 , "translation"        , "min", "max", "offset", "multiplier"],
+        ["rpmspin",             "etki_jpe_2jz_billet_cam_pulley_1",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,  360,   0,        1],
+        ["rpmspin",             "etki_jpe_2jz_billet_cam_pulley_2",      "e3l","e3r","e4l",     {"x":-90, "y":0, "z":0}, {"x":0, "y":1, "z":0}, {"x":0, "y":0, "z":0}, -360,  360,   0,       -1],
+    ],
+},
 }

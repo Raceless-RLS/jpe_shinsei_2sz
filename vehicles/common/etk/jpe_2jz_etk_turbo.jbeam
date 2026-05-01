@@ -1,0 +1,449 @@
+{
+"etk800_jpe_2jz_aspiration_main": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Intake Manifold",
+        "value":0,
+    },
+    "slotType" : "etk800_jpe_2jz_aspiration_main",
+	"slots": [
+        ["type", "default", "description"],
+        ["etk_jpe_2jz_intake_manifold","etk_jpe_2jz_aspiration_main","Body Style", {"coreSlot":true}],
+		
+    ],
+},
+"etk_jpe_2jz_aspiration_main": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Turbocharger",
+        "value":0,
+    },
+    "slotType" : "etk_jpe_2jz_intake_manifold",
+    "slots": [
+        ["type", "default", "description"],
+        ["etk800_jpe_2jz_intake_manifold","etk800_jpe_2jz_turbo_type_twin", "Intake Manifold", {"coreSlot":true}]
+    ],
+},
+"etk_jpe_2jz_aspiration_main": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Turbocharger",
+        "value":0,
+    },
+    "slotType" : "etk_jpe_2jz_intake_manifold",
+    "slots": [
+        ["type", "default", "description"],
+        ["etkc_jpe_2jz_intake_manifold","etkc_jpe_2jz_turbo_type_twin", "Intake Manifold", {"coreSlot":true}]
+    ],
+},
+"etk800_jpe_2jz_turbo_type_twin": {
+    "information": {
+        "authors": "Jefe/JPE",
+        "name": "Twin Turbo",
+        "value": 500
+    },
+    "slotType": "etk800_jpe_2jz_intake_manifold",
+    "slots": [
+        ["type", "default", "description"],
+        ["jpe_2jz_turbocharger_twin", "jpe_2jz_turbo_core_stock", "Turbocharger", {"coreSlot": true}],
+        ["etk_exhaust_i6_3.0_petrol", "jpe_2jz_etk_exhaust_main_A", "Exhaust System"],		
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["etk800_jpe_2jz_intake_manifold", ["etk800_engine", "etk800_intake"]],
+        ["etk800_jpe_2jz_exhaust_header", ["etk800_engine", "etk800_turbo", "etk800_header"]],
+        ["etk800_jpe_2jz_intercooler", ["etk800_engine", "etk800_turbo", "etk800_header"]],
+        ["etk800_jpe_2jz_ic_pipes", ["etk800_engine", "etk800_turbo", "etk800_header"]],
+        ["etk800_jpe_2jz_CAIK&N", ["etk800_engine", "etk800_turbo", "etk800_header"]]
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--turbo and intercooler weight--
+         {"selfCollision":false},
+         {"collision":true},
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"engineGroup":""},
+         {"group":"etk800_engine"},
+         {"nodeWeight":11},
+         ["turbo", -0.33, -1.24, 0.68],
+         {"group":"etk800_intercooler"},
+         {"nodeWeight":4},
+         ["interc", 0.0, -2.02, 0.32],
+         {"nodeWeight":1},
+         {"group":"etk800_intercooler"},
+         ["airb1", 0.23, -1.26, 0.72],
+         ["airb2", -0.4, -1.44, 0.52],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":2750550,"beamDamp":125},
+          {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"mainEngine_turbo", "deformationTriggerRatio":0.001}
+          ["turbo","e1r"],
+          ["turbo","e2r"],
+          ["turbo","e3r"],
+          ["turbo","e4r"],
+          ["turbo","e1l"],
+          ["turbo","e2l"],
+          ["turbo","e3l"],
+          ["turbo","e4l"],
+
+          {"beamSpring":501000,"beamDamp":150},
+          {"beamDeform":5000,"beamStrength":14000},
+          {"deformGroup":"mainEngine_piping", "deformationTriggerRatio":0.01}
+          ["airb1", "e2l"],
+          ["airb1", "e1l"],
+          ["airb1", "e4l"],
+          ["airb1", "e3l"],
+          ["airb1", "e4r"],
+
+          ["airb2", "e2r"],
+          ["airb2", "e1r"],
+          ["airb2", "e4r"],
+          ["airb2", "e3r"],
+          ["airb2", "e4l"],
+          {"breakGroup":""},
+
+          {"beamSpring":801000,"beamDamp":400},
+          {"beamDeform":7000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"mainEngine_intercooler", "deformationTriggerRatio":0.1}
+          ["interc", "f11r"],
+          ["interc", "f13r"],
+          ["interc", "f11l"],
+          ["interc", "f13l"],
+          ["interc", "f11"],
+          ["interc", "f12rr"],
+          ["interc", "f12ll"],
+          {"deformGroup":"", "deformationTriggerRatio":"", "deformationTriggerRatio":""}
+          ["interc", "f15r"],
+          ["interc", "f15l"],
+
+          {"beamType":"|BOUNDED", "beamLongBound":0.025, "beamShortBound":0.025},
+          {"beamSpring":20000,"beamDamp":50},
+          {"beamLimitSpring":1001000,"beamLimitDamp":200},
+          {"beamDeform":4000,"beamStrength":"FLT_MAX"},
+          ["airb1", "f11ll"],
+          ["airb1", "f15l"],
+          ["airb1", "f15"],
+          ["airb1", "f11"],
+
+          ["airb2", "f11rr"],
+          ["airb2", "f15r"],
+          ["airb2", "f15"],
+          ["airb2", "f11"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"etk800_jpe_2jz_turbo_type_single": {
+    "information": {
+        "authors": "Jefe/JPE",
+        "name": "Single Turbo",
+        "value": 1000
+    },
+    "slotType": "etk800_jpe_2jz_intake_manifold",
+    "slots": [
+        ["type", "default", "description"],
+        ["jpe_2jz_turbocharger_single", "jpe_2jz_turbo_core_stage1", "Turbocharger", {"coreSlot": true}],
+        ["etk_exhaust_i6_3.0_petrol", "jpe_2jz_etk_exhaust_main_A", "Exhaust System"],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["etk800_jpe_2jz_intake_manifold", ["etk800_engine", "etk800_intake"]],
+        ["etk800_jpe_2jz_single_turbokit", ["etk800_engine", "etk800_turbo", "etk800_header"]],
+        ["etk800_jpe_2jz_intercooler", ["etk800_engine", "etk800_turbo", "etk800_header"]],
+        ["etk800_jpe_2jz_single_ic_pipes", ["etk800_engine", "etk800_turbo", "etk800_header"]]
+    ],
+    "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+        ["turboSpin", "etk800_jpe_2jz_turbowheel", "e2r", "e2l", "e4r", {"x": 0, "y": 0, "z": -13.620}, {"x": 0, "y": 1.5, "z": 0}, {"x": 0.0, "y": 0.0, "z": 0.0}, -360, 360, 0, 1.5]
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--turbo and intercooler weight--
+         {"selfCollision":false},
+         {"collision":true},
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"engineGroup":""},
+         {"group":"etk800_engine"},
+         {"nodeWeight":11},
+         ["turbo", -0.33, -1.24, 0.68],
+         {"group":"etk800_intercooler"},
+         {"nodeWeight":4},
+         ["interc", 0.0, -2.02, 0.32],
+         {"nodeWeight":1},
+         {"group":"etk800_intercooler"},
+         ["airb1", 0.23, -1.26, 0.72],
+         ["airb2", -0.4, -1.44, 0.52],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":2750550,"beamDamp":125},
+          {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"mainEngine_turbo", "deformationTriggerRatio":0.001}
+          ["turbo","e1r"],
+          ["turbo","e2r"],
+          ["turbo","e3r"],
+          ["turbo","e4r"],
+          ["turbo","e1l"],
+          ["turbo","e2l"],
+          ["turbo","e3l"],
+          ["turbo","e4l"],
+
+          {"beamSpring":501000,"beamDamp":150},
+          {"beamDeform":5000,"beamStrength":14000},
+          {"deformGroup":"mainEngine_piping", "deformationTriggerRatio":0.01}
+          ["airb1", "e2l"],
+          ["airb1", "e1l"],
+          ["airb1", "e4l"],
+          ["airb1", "e3l"],
+          ["airb1", "e4r"],
+
+          ["airb2", "e2r"],
+          ["airb2", "e1r"],
+          ["airb2", "e4r"],
+          ["airb2", "e3r"],
+          ["airb2", "e4l"],
+          {"breakGroup":""},
+
+          {"beamSpring":801000,"beamDamp":400},
+          {"beamDeform":7000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"mainEngine_intercooler", "deformationTriggerRatio":0.1}
+          ["interc", "f11r"],
+          ["interc", "f13r"],
+          ["interc", "f11l"],
+          ["interc", "f13l"],
+          ["interc", "f11"],
+          ["interc", "f12rr"],
+          ["interc", "f12ll"],
+          {"deformGroup":"", "deformationTriggerRatio":"", "deformationTriggerRatio":""}
+          ["interc", "f15r"],
+          ["interc", "f15l"],
+
+          {"beamType":"|BOUNDED", "beamLongBound":0.025, "beamShortBound":0.025},
+          {"beamSpring":20000,"beamDamp":50},
+          {"beamLimitSpring":1001000,"beamLimitDamp":200},
+          {"beamDeform":4000,"beamStrength":"FLT_MAX"},
+          ["airb1", "f11ll"],
+          ["airb1", "f15l"],
+          ["airb1", "f15"],
+          ["airb1", "f11"],
+
+          ["airb2", "f11rr"],
+          ["airb2", "f15r"],
+          ["airb2", "f15"],
+          ["airb2", "f11"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"etkc_jpe_2jz_turbo_type_twin": {
+    "information": {
+        "authors": "Jefe/JPE",
+        "name": "Twin Turbo",
+        "value": 500
+    },
+    "slotType": "etkc_jpe_2jz_intake_manifold",
+    "slots": [
+        ["type", "default", "description"],
+        ["jpe_2jz_turbocharger_twin", "jpe_2jz_turbo_core_stock", "Turbocharger", {"coreSlot": true}],
+        ["etk_exhaust_i6_3.0_petrol", "jpe_2jz_etk_exhaust_main_A", "Exhaust System"],		
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["etk800_jpe_2jz_intake_manifold", ["etk800_engine", "etk800_intake"]],
+        ["etk800_jpe_2jz_exhaust_header", ["etk800_engine", "etk800_turbo", "etk800_header"]],
+        ["etk800_jpe_2jz_intercooler", ["etk800_engine", "etk800_turbo", "etk800_header"]],
+        ["etk800_jpe_2jz_ic_pipes", ["etk800_engine", "etk800_turbo", "etk800_header"]],
+        ["etk800_jpe_2jz_CAIK&N", ["etk800_engine", "etk800_turbo", "etk800_header"]]
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--turbo and intercooler weight--
+         {"selfCollision":false},
+         {"collision":true},
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"engineGroup":""},
+         {"group":"etk800_engine"},
+         {"nodeWeight":11},
+         ["turbo", -0.33, -1.24, 0.68],
+         {"group":"etk800_intercooler"},
+         {"nodeWeight":4},
+         ["interc", 0.0, -2.02, 0.32],
+         {"nodeWeight":1},
+         {"group":"etk800_intercooler"},
+         ["airb1", 0.23, -1.26, 0.72],
+         ["airb2", -0.4, -1.44, 0.52],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":2750550,"beamDamp":125},
+          {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"mainEngine_turbo", "deformationTriggerRatio":0.001}
+          ["turbo","e1r"],
+          ["turbo","e2r"],
+          ["turbo","e3r"],
+          ["turbo","e4r"],
+          ["turbo","e1l"],
+          ["turbo","e2l"],
+          ["turbo","e3l"],
+          ["turbo","e4l"],
+
+          {"beamSpring":501000,"beamDamp":150},
+          {"beamDeform":5000,"beamStrength":14000},
+          {"deformGroup":"mainEngine_piping", "deformationTriggerRatio":0.01}
+          ["airb1", "e2l"],
+          ["airb1", "e1l"],
+          ["airb1", "e4l"],
+          ["airb1", "e3l"],
+          ["airb1", "e4r"],
+
+          ["airb2", "e2r"],
+          ["airb2", "e1r"],
+          ["airb2", "e4r"],
+          ["airb2", "e3r"],
+          ["airb2", "e4l"],
+          {"breakGroup":""},
+
+          {"beamSpring":801000,"beamDamp":400},
+          {"beamDeform":7000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"mainEngine_intercooler", "deformationTriggerRatio":0.1}
+          ["interc", "f11r"],
+          ["interc", "f13r"],
+          ["interc", "f11l"],
+          ["interc", "f13l"],
+          ["interc", "f11"],
+          ["interc", "f12rr"],
+          ["interc", "f12ll"],
+          {"deformGroup":"", "deformationTriggerRatio":"", "deformationTriggerRatio":""}
+          ["interc", "f15r"],
+          ["interc", "f15l"],
+
+          {"beamType":"|BOUNDED", "beamLongBound":0.025, "beamShortBound":0.025},
+          {"beamSpring":20000,"beamDamp":50},
+          {"beamLimitSpring":1001000,"beamLimitDamp":200},
+          {"beamDeform":4000,"beamStrength":"FLT_MAX"},
+          ["airb1", "f11ll"],
+          ["airb1", "f15l"],
+          ["airb1", "f15"],
+          ["airb1", "f11"],
+
+          ["airb2", "f11rr"],
+          ["airb2", "f15r"],
+          ["airb2", "f15"],
+          ["airb2", "f11"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+"etkc_jpe_2jz_turbo_type_single": {
+    "information": {
+        "authors": "Jefe/JPE",
+        "name": "Single Turbo",
+        "value": 1000
+    },
+    "slotType": "etkc_jpe_2jz_intake_manifold",
+    "slots": [
+        ["type", "default", "description"],
+        ["jpe_2jz_turbocharger_single", "jpe_2jz_turbo_core_stage1", "Turbocharger", {"coreSlot": true}],
+        ["etk_exhaust_i6_3.0_petrol", "jpe_2jz_etk_exhaust_main_A", "Exhaust System"],
+    ],
+    "flexbodies": [
+        ["mesh", "[group]:", "nonFlexMaterials"],
+        ["etk800_jpe_2jz_intake_manifold", ["etk800_engine", "etk800_intake"]],
+        ["etk800_jpe_2jz_single_turbokit", ["etk800_engine", "etk800_turbo", "etk800_header"]],
+        ["etk800_jpe_2jz_intercooler", ["etk800_engine", "etk800_turbo", "etk800_header"]],
+        ["etk800_jpe_2jz_single_ic_pipes", ["etk800_engine", "etk800_turbo", "etk800_header"]]
+    ],
+    "props": [
+        ["func", "mesh", "idRef:", "idX:", "idY:", "baseRotation", "rotation", "translation", "min", "max", "offset", "multiplier"],
+        ["turboSpin", "etkc_jpe_2jz_turbowheel", "e2r", "e2l", "e4r", {"x": 0, "y": 0, "z": -13.620}, {"x": 0, "y": 1.5, "z": 0}, {"x": 0.0, "y": 0.0, "z": 0.0}, -360, 360, 0, 1.5]
+    ],
+    "nodes": [
+         ["id", "posX", "posY", "posZ"],
+         //--turbo and intercooler weight--
+         {"selfCollision":false},
+         {"collision":true},
+         {"nodeMaterial":"|NM_METAL"},
+         {"frictionCoef":0.5},
+         {"engineGroup":""},
+         {"group":"etk800_engine"},
+         {"nodeWeight":11},
+         ["turbo", -0.33, -1.24, 0.68],
+         {"group":"etk800_intercooler"},
+         {"nodeWeight":4},
+         ["interc", 0.0, -2.02, 0.32],
+         {"nodeWeight":1},
+         {"group":"etk800_intercooler"},
+         ["airb1", 0.23, -1.26, 0.72],
+         ["airb2", -0.4, -1.44, 0.52],
+         {"group":""},
+    ],
+    "beams": [
+          ["id1:", "id2:"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1, "beamShortBound":1},
+          {"beamSpring":2750550,"beamDamp":125},
+          {"beamDeform":30000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"mainEngine_turbo", "deformationTriggerRatio":0.001}
+          ["turbo","e1r"],
+          ["turbo","e2r"],
+          ["turbo","e3r"],
+          ["turbo","e4r"],
+          ["turbo","e1l"],
+          ["turbo","e2l"],
+          ["turbo","e3l"],
+          ["turbo","e4l"],
+
+          {"beamSpring":501000,"beamDamp":150},
+          {"beamDeform":5000,"beamStrength":14000},
+          {"deformGroup":"mainEngine_piping", "deformationTriggerRatio":0.01}
+          ["airb1", "e2l"],
+          ["airb1", "e1l"],
+          ["airb1", "e4l"],
+          ["airb1", "e3l"],
+          ["airb1", "e4r"],
+
+          ["airb2", "e2r"],
+          ["airb2", "e1r"],
+          ["airb2", "e4r"],
+          ["airb2", "e3r"],
+          ["airb2", "e4l"],
+          {"breakGroup":""},
+
+          {"beamSpring":801000,"beamDamp":400},
+          {"beamDeform":7000,"beamStrength":"FLT_MAX"},
+          {"deformGroup":"mainEngine_intercooler", "deformationTriggerRatio":0.1}
+          ["interc", "f11r"],
+          ["interc", "f13r"],
+          ["interc", "f11l"],
+          ["interc", "f13l"],
+          ["interc", "f11"],
+          ["interc", "f12rr"],
+          ["interc", "f12ll"],
+          {"deformGroup":"", "deformationTriggerRatio":"", "deformationTriggerRatio":""}
+          ["interc", "f15r"],
+          ["interc", "f15l"],
+
+          {"beamType":"|BOUNDED", "beamLongBound":0.025, "beamShortBound":0.025},
+          {"beamSpring":20000,"beamDamp":50},
+          {"beamLimitSpring":1001000,"beamLimitDamp":200},
+          {"beamDeform":4000,"beamStrength":"FLT_MAX"},
+          ["airb1", "f11ll"],
+          ["airb1", "f15l"],
+          ["airb1", "f15"],
+          ["airb1", "f11"],
+
+          ["airb2", "f11rr"],
+          ["airb2", "f15r"],
+          ["airb2", "f15"],
+          ["airb2", "f11"],
+          {"beamPrecompression":1, "beamType":"|NORMAL", "beamLongBound":1.0, "beamShortBound":1.0},
+    ],
+},
+}

@@ -1,0 +1,47 @@
+{
+    "header" : {
+        "version" : 1
+    },
+    "eventName" : "event:>Engine>mod_exhaust",
+    "samples" : 
+    [
+        [
+           ["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_off_750.wav", 750],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_off_1442.wav", 1442],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_off_1818.wav", 1818],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_off_2254.wav", 2254],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_off_2592.wav", 2592],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_off_3000.wav", 3000],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_off_3402.wav", 3402],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_off_3824.wav", 3824],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_off_4210.wav", 4210],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_off_4604.wav", 4604],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_off_5030.wav", 5030],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_off_5408.wav", 5408],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_off_5812.wav", 5812],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_off_6206.wav", 6206],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_off_6613.wav", 6613],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_off_7007.wav", 7007],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_off_7318.wav", 7318]
+        ],
+        [
+           ["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_off_750.wav", 750],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_on_1527.wav", 1527],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_on_1825.wav", 1825],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_on_2207.wav", 2207],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_on_2608.wav", 2608],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_on_2630.wav", 2630],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_on_3009.wav", 3009],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_on_3406.wav", 3406],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_on_3804.wav", 3804],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_on_3980.wav", 3980],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_on_4279.wav", 4279],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_on_5418.wav", 5418],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_on_5800.wav", 5800],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_on_6213.wav", 6213],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_on_6605.wav", 6605],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_on_7015.wav", 7015],
+["art/sound/engine/Redknee2JZ_EXHAUST/2jz_exh_on_7365.wav", 7365]
+        ]
+    ]
+}

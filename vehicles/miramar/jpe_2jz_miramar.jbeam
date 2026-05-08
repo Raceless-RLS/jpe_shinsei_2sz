@@ -100,69 +100,79 @@
         "soundConfigExhaust": "soundConfigExhaust",
 
         //starter motor
-        "starterSample":"event:>Engine>Starter>i4_1996_eng",
+        "starterSample":"art/sound/starter/Toyota_Supra_SZR_Ignition.ogg",
         "starterSampleExhaust":"event:>Engine>Starter>i4_1996_exh",
         "shutOffSampleEngine":"event:>Engine>Shutoff>i4_1996_eng",
         "shutOffSampleExhaust":"event:>Engine>Shutoff>i4_1996_exh",
-		"starterVolume":0.78,
-		"starterVolumeExhaust":0.68,
-		"shutOffVolumeEngine":0.72,
-		"shutOffVolumeExhaust":0.70,
+		"starterVolume":1,
+		"starterVolumeExhaust":0.0,
+		"shutOffVolumeEngine":0.42,
+		"shutOffVolumeExhaust":0.40,
+        "starterThrottleKillTime":0.880,
 
 		"idleRPMStartRate":1.2,
 		"idleRPMStartCoef":1.6,
-		"idleRPMFallRate":0.6
+		"idleRPMFallRate":0.6vvvvvvvvvvvvvv
 
         //engine deform groups
         "deformGroups":["mainEngine", "mainEngine_intake", "mainEngine_accessories"]
         "deformGroups_oilPan":["oilpan_damage"]
     },
-	"soundConfig":{
-		"sampleName":"I6_2_engine",
-		"fundamentalFrequencyCylinderCount":6,
+	"soundConfig": {
+        "sampleName": "Redknee2JZ_ENGINE",
+        "intakeMuffling": 0.25,
 
-    "mainGain":1.975,
-    "onLoadGain":0.98,
-    "offLoadGain":0.80,
+        "mainGain": -1,
+        "onLoadGain":1,
+        "offLoadGain":1.0,
 
-		"eqLowFreq":120,
-		"eqLowGain":9,
-		"eqLowWidth":0.7,
+        "maxLoadMix": 1.0,
+        "minLoadMix": 0,
 
-		"eqHighFreq":4200,
-		"eqHighGain":5.5,
-		"eqHighWidth":0.6,
+        "lowShelfGain":0,
+        "lowShelfFreq":20,
 
-		"lowShelfFreq":90,
-		"lowShelfGain":4,
+        "highShelfGain":0,
+        "highShelfFreq":10000,
 
-		"highShelfFreq":5200,
-		"highShelfGain":7,
+        "eqLowGain": 6,
+        "eqLowFreq": 500,
+        "eqLowWidth": 1.0,
 
-	},
-	"soundConfigExhaust":{
-		"sampleName":"I6_2_exhaust",
-		"fundamentalFrequencyCylinderCount":6,
+        "eqHighGain": 0,
+        "eqHighFreq": 2000,
+        "eqHighWidth": 0.02,
 
-    "mainGain":2.95,
-    "onLoadGain":1.05,
-    "offLoadGain":0.72,
+        "fundamentalFrequencyCylinderCount":6,
+        "eqFundamentalGain": 1,
+    },
+    "soundConfigExhaust": {
+        "sampleName": "Redknee2JZ_EXHAUST",
 
-		"eqLowFreq":110,
-		"eqLowGain":8,
-		"eqLowWidth":0.6,
+        "mainGain": 5,
+        "onLoadGain":1,
+        "offLoadGain":1.0,
 
-		"eqHighFreq":4800,
-		"eqHighGain":5,
-		"eqHighWidth":0.7,
+        "maxLoadMix": 1.0,
+        "minLoadMix": 0,
 
-		"lowShelfFreq":95,
-		"lowShelfGain":6,
+        "lowShelfGain":0,
+        "lowShelfFreq":20,
 
-		"highShelfFreq":4500,
-		"highShelfGain":6,
+        "highShelfGain":0,
+        "highShelfFreq":10000,
 
-	},
+        "eqLowGain": 6,
+        "eqLowFreq": 500,
+        "eqLowWidth": 1.0,
+
+        "eqHighGain": 0,
+        "eqHighFreq": 2000,
+        "eqHighWidth": 0.02,
+
+        "fundamentalFrequencyCylinderCount":6,
+        "eqFundamentalGain": 1,
+    },
     "vehicleController": {
         "clutchLaunchStartRPM":1500,
         "clutchLaunchTargetRPM":2000,

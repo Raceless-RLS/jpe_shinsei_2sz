@@ -58,9 +58,9 @@
         "requiredEnergyType":"gasoline",
 
         //exhaust
-        "instantAfterFireSound": "event:>Vehicle>Afterfire>i5_01>single",
-        "sustainedAfterFireSound": "event:>Vehicle>Afterfire>i5_01>multi",
-        "shiftAfterFireSound": "event:>Vehicle>Afterfire>i5_01>shift",
+        "instantAfterFireSound": "event:>Vehicle>Afterfire>i6_01>single",
+        "sustainedAfterFireSound": "event:>Vehicle>Afterfire>i6_01>multi",
+        "shiftAfterFireSound": "event:>Vehicle>Afterfire>i6_01>shift",
         "particulates":0.015,
         "afterFireAudibleThresholdInstant": 5000,
         "instantAfterFireCoef": 1.0,
@@ -112,7 +112,7 @@
 
 		"idleRPMStartRate":1.2,
 		"idleRPMStartCoef":1.6,
-		"idleRPMFallRate":0.6vvvvvvvvvvvvvv
+		"idleRPMFallRate":0.6
 
         //engine deform groups
         "deformGroups":["mainEngine", "mainEngine_intake", "mainEngine_accessories"]

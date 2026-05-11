@@ -68,7 +68,7 @@
         "afterFireAudibleThresholdShift": 5000,
         "shiftAfterFireVolumeCoef": 2.0,
         "afterFireAudibleThresholdSustained": 7000,
-        "sustainedAfterFireCoef": 0.9,
+        "sustainedAfterFireCoef": 0.75,
         "sustainedAfterFireTime": 0.8,
         "sustainedAfterFireVolumeCoef": 0.7,	
 

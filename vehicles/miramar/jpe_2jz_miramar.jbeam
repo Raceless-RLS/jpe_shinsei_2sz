@@ -58,9 +58,9 @@
         "requiredEnergyType":"gasoline",
 
         //exhaust
-        "instantAfterFireSound": "event:>Vehicle>Afterfire>i5_01>single",
-        "sustainedAfterFireSound": "event:>Vehicle>Afterfire>i5_01>multi",
-        "shiftAfterFireSound": "event:>Vehicle>Afterfire>i5_01>shift",
+        "instantAfterFireSound": "event:>Vehicle>Afterfire>i6_01>single",
+        "sustainedAfterFireSound": "event:>Vehicle>Afterfire>i6_01>multi",
+        "shiftAfterFireSound": "event:>Vehicle>Afterfire>i6_01>shift",
         "particulates":0.015,
         "afterFireAudibleThresholdInstant": 5000,
         "instantAfterFireCoef": 0.75,
@@ -100,14 +100,15 @@
         "soundConfigExhaust": "soundConfigExhaust",
 
         //starter motor
-        "starterSample":"event:>Engine>Starter>i4_1996_eng",
+        "starterSample":"art/sound/starter/Toyota_Supra_SZR_Ignition.ogg",
         "starterSampleExhaust":"event:>Engine>Starter>i4_1996_exh",
         "shutOffSampleEngine":"event:>Engine>Shutoff>i4_1996_eng",
         "shutOffSampleExhaust":"event:>Engine>Shutoff>i4_1996_exh",
-		"starterVolume":0.78,
-		"starterVolumeExhaust":0.68,
-		"shutOffVolumeEngine":0.72,
-		"shutOffVolumeExhaust":0.70,
+		"starterVolume":1,
+		"starterVolumeExhaust":0.0,
+		"shutOffVolumeEngine":0.42,
+		"shutOffVolumeExhaust":0.40,
+        "starterThrottleKillTime":0.880,
 
 		"idleRPMStartRate":1.2,
 		"idleRPMStartCoef":1.6,

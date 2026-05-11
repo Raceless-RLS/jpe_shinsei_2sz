@@ -10,8 +10,6 @@
         "revLimiterRPM":7200,
         "revLimiterType":"timeBased",
         "revLimiterCutTime":0.11,
-        "$*instantAfterFireCoef": 1.10,
-        "$*sustainedAfterFireCoef": 1.05,
         "particulates":0.01,
         "exhaustFlameSizeCoef":1.5,
         "exhaustFlameColorCoef":1.25
@@ -31,14 +29,16 @@
     "variables": [
         ["name", "type", "unit", "category", "default", "min", "max", "title", "description"],
         ["$revLimiterRPM", "range", "rpm", "Engine", 7800, 7200, 8500, "RPM Limit", "RPM where the rev limiter prevents further revving", {"stepDis":50}],
-        ["$boostTarget", "range", "psi", "Turbo", 18, 0, 25, "Boost Pressure", "Target turbo boost pressure", {"stepDis":0.5}]
+        ["$boostTarget", "range", "psi", "Turbo", 18, 0, 35, "Boost Pressure", "Target turbo boost pressure", {"stepDis":0.5}]
+    ],
+        "controller": [
+        ["fileName"],
+        ["twoStepLaunch", {"rpmLimit":"$twoStepRPM"}]
     ],
     "mainEngine":{
         "revLimiterRPM":"$revLimiterRPM",
         "revLimiterType":"timeBased",
         "revLimiterCutTime":0.10,
-        "$*instantAfterFireCoef": 1.10,
-        "$*sustainedAfterFireCoef": 1.05,
         "particulates":0.01,
         "exhaustFlameSizeCoef":1.5,
         "exhaustFlameColorCoef":1.25
@@ -82,8 +82,6 @@
         "revLimiterRPM":"$revLimiterRPM",
         "revLimiterType":"timeBased",
         "revLimiterCutTime":"$revLimiterCutTime",
-        "$*instantAfterFireCoef": 1.15,
-        "$*sustainedAfterFireCoef": 1.075,
         "particulates":0.015,
         "exhaustFlameSizeCoef":2.0,
         "exhaustFlameColorCoef":1.35

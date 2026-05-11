@@ -63,7 +63,7 @@
         "shiftAfterFireSound": "event:>Vehicle>Afterfire>i5_01>shift",
         "particulates":0.015,
         "afterFireAudibleThresholdInstant": 5000,
-        "instantAfterFireCoef": 1.0,
+        "instantAfterFireCoef": 0.75,
         "instantAfterFireVolumeCoef": 1.75,
         "afterFireAudibleThresholdShift": 5000,
         "shiftAfterFireVolumeCoef": 2.0,
@@ -118,52 +118,61 @@
         "deformGroups":["mainEngine", "mainEngine_intake", "mainEngine_accessories"]
         "deformGroups_oilPan":["oilpan_damage"]
     },
-	"soundConfig":{
-		"sampleName":"I6_2_engine",
-		"fundamentalFrequencyCylinderCount":6,
+	"soundConfig": {
+        "sampleName": "Redknee2JZ_ENGINE",
+        "intakeMuffling": 0.25,
 
-    "mainGain":1.975,
-    "onLoadGain":0.98,
-    "offLoadGain":0.80,
+        "mainGain": -1,
+        "onLoadGain":1,
+        "offLoadGain":1.0,
 
-		"eqLowFreq":120,
-		"eqLowGain":9,
-		"eqLowWidth":0.7,
+        "maxLoadMix": 1.0,
+        "minLoadMix": 0,
 
-		"eqHighFreq":4200,
-		"eqHighGain":5.5,
-		"eqHighWidth":0.6,
+        "lowShelfGain":0,
+        "lowShelfFreq":20,
 
-		"lowShelfFreq":90,
-		"lowShelfGain":4,
+        "highShelfGain":0,
+        "highShelfFreq":10000,
 
-		"highShelfFreq":5200,
-		"highShelfGain":7,
+        "eqLowGain": 6,
+        "eqLowFreq": 500,
+        "eqLowWidth": 1.0,
 
-	},
-	"soundConfigExhaust":{
-		"sampleName":"I6_2_exhaust",
-		"fundamentalFrequencyCylinderCount":6,
+        "eqHighGain": 0,
+        "eqHighFreq": 2000,
+        "eqHighWidth": 0.02,
 
-    "mainGain":2.95,
-    "onLoadGain":1.05,
-    "offLoadGain":0.72,
+        "fundamentalFrequencyCylinderCount":6,
+        "eqFundamentalGain": 1,
+    },
+    "soundConfigExhaust": {
+        "sampleName": "Redknee2JZ_EXHAUST",
 
-		"eqLowFreq":110,
-		"eqLowGain":8,
-		"eqLowWidth":0.6,
+        "mainGain": 5,
+        "onLoadGain":1,
+        "offLoadGain":1.0,
 
-		"eqHighFreq":4800,
-		"eqHighGain":5,
-		"eqHighWidth":0.7,
+        "maxLoadMix": 1.0,
+        "minLoadMix": 0,
 
-		"lowShelfFreq":95,
-		"lowShelfGain":6,
+        "lowShelfGain":0,
+        "lowShelfFreq":20,
 
-		"highShelfFreq":4500,
-		"highShelfGain":6,
+        "highShelfGain":0,
+        "highShelfFreq":10000,
 
-	},
+        "eqLowGain": 6,
+        "eqLowFreq": 500,
+        "eqLowWidth": 1.0,
+
+        "eqHighGain": 0,
+        "eqHighFreq": 2000,
+        "eqHighWidth": 0.02,
+
+        "fundamentalFrequencyCylinderCount":6,
+        "eqFundamentalGain": 1,
+    },
     "vehicleController": {
         "clutchLaunchStartRPM":1500,
         "clutchLaunchTargetRPM":2000,

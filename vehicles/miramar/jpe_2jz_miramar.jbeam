@@ -63,7 +63,7 @@
         "shiftAfterFireSound": "event:>Vehicle>Afterfire>i6_01>shift",
         "particulates":0.015,
         "afterFireAudibleThresholdInstant": 5000,
-        "instantAfterFireCoef": 1.0,
+        "instantAfterFireCoef": 0.75,
         "instantAfterFireVolumeCoef": 1.75,
         "afterFireAudibleThresholdShift": 5000,
         "shiftAfterFireVolumeCoef": 2.0,

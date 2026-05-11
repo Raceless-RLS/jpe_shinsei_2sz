@@ -57,7 +57,7 @@
          {"selfCollision":false},
          ["ex4l", -0.19, 1.17, 0.40],
          {"selfCollision":true},
-         ["ex6l", -0.4929, 2.2886, 0.3,{"afterFireAudioCoef":0.9, "afterFireVisualCoef":0.9, "afterFireVolumeCoef":1.15, "afterFireMufflingCoef":0.0, "exhaustAudioMufflingCoef":0.25, "exhaustAudioGainChange":-1}],
+         ["ex6l", -0.4929, 2.2886, 0.3,{"afterFireAudioCoef":0.75, "afterFireVisualCoef":0.9, "afterFireVolumeCoef":1.15, "afterFireMufflingCoef":0.0, "exhaustAudioMufflingCoef":0.25, "exhaustAudioGainChange":-1}],
          ["ex6ll", -0.2814, 1.6, 0.31],
          //rigidifier
          {"selfCollision":false},
@@ -278,7 +278,7 @@
          {"selfCollision":false},
          ["ex4l", -0.19, 1.17, 0.40],
          {"selfCollision":true},
-         ["ex6l", -0.4929, 2.2886, 0.3,{"afterFireAudioCoef":0.9, "afterFireVisualCoef":0.9, "afterFireVolumeCoef":1.15, "afterFireMufflingCoef":0.0, "exhaustAudioMufflingCoef":0.25, "exhaustAudioGainChange":-1}],
+         ["ex6l", -0.4929, 2.2886, 0.3,{"afterFireAudioCoef":0.75, "afterFireVisualCoef":0.9, "afterFireVolumeCoef":1.15, "afterFireMufflingCoef":0.0, "exhaustAudioMufflingCoef":0.25, "exhaustAudioGainChange":-1}],
          ["ex6ll", -0.2814, 1.6, 0.31],
          //rigidifier
          {"selfCollision":false},
@@ -500,7 +500,7 @@
          {"selfCollision":false},
          ["ex4l", -0.19, -0.7588, 0.40],
          {"selfCollision":true},
-         ["ex6l", -0.8097, -0.7463, 0.2569,{"afterFireAudioCoef":0.9, "afterFireVisualCoef":0.9, "afterFireVolumeCoef":1.15, "afterFireMufflingCoef":0.0, "exhaustAudioMufflingCoef":0.25, "exhaustAudioGainChange":-1}],
+         ["ex6l", -0.8097, -0.7463, 0.2569,{"afterFireAudioCoef":0.75, "afterFireVisualCoef":0.9, "afterFireVolumeCoef":1.15, "afterFireMufflingCoef":0.0, "exhaustAudioMufflingCoef":0.25, "exhaustAudioGainChange":-1}],
          ["ex6ll", -0.4645, -0.4752, 0.2484],
          //rigidifier
          {"selfCollision":false},
@@ -722,7 +722,7 @@
          {"selfCollision":false},
          ["ex4l", -0.19, -0.7588, 0.40],
          {"selfCollision":true},
-         ["ex6l", -0.884, -0.7463, 0.4031,{"afterFireAudioCoef":0.9, "afterFireVisualCoef":0.9, "afterFireVolumeCoef":1.15, "afterFireMufflingCoef":0.0, "exhaustAudioMufflingCoef":0.25, "exhaustAudioGainChange":-1}],
+         ["ex6l", -0.884, -0.7463, 0.4031,{"afterFireAudioCoef":0.75, "afterFireVisualCoef":0.9, "afterFireVolumeCoef":1.15, "afterFireMufflingCoef":0.0, "exhaustAudioMufflingCoef":0.25, "exhaustAudioGainChange":-1}],
          ["ex6ll", -0.82, -0.6459, 0.2201],
          //rigidifier
          {"selfCollision":false},
@@ -957,7 +957,7 @@
          {"selfCollision":false},
          ["ex4l", -0.19, 1.17, 0.40],
          {"selfCollision":true},
-         ["ex6l", -0.4929, 2.2886, 0.3,{"afterFireAudioCoef":0.9, "afterFireVisualCoef":0.9, "afterFireVolumeCoef":1.15, "afterFireMufflingCoef":0.0, "exhaustAudioMufflingCoef":0.25, "exhaustAudioGainChange":-1}],
+         ["ex6l", -0.4929, 2.2886, 0.3,{"afterFireAudioCoef":0.75, "afterFireVisualCoef":0.9, "afterFireVolumeCoef":1.15, "afterFireMufflingCoef":0.0, "exhaustAudioMufflingCoef":0.25, "exhaustAudioGainChange":-1}],
          ["ex6ll", -0.2814, 1.6, 0.31],
          //rigidifier
          {"selfCollision":false},

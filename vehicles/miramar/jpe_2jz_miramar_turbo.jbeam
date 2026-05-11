@@ -37,7 +37,7 @@
         {"engineGroup": ""},
         {"nodeWeight": 2.0},
         {"group": "miramar_header"},
-        ["exm1r", 0.232, -0.872, 0.322, {"afterFireAudioCoef": 1.0, "afterFireVisualCoef": 1.0, "afterFireVolumeCoef": 1.0, "afterFireMufflingCoef": 1.0, "exhaustAudioMufflingCoef": 1.0, "exhaustAudioGainChange": 0}],
+        ["exm1r", 0.232, -0.872, 0.322, {"afterFireAudioCoef": 0.75, "afterFireVisualCoef": 1.0, "afterFireVolumeCoef": 1.0, "afterFireMufflingCoef": 1.0, "exhaustAudioMufflingCoef": 1.0, "exhaustAudioGainChange": 0}],
         {"group": ""}
     ],
     "beams": [
@@ -138,7 +138,7 @@
         {"engineGroup": ""},
         {"nodeWeight": 2.0},
         {"group": "miramar_header"},
-        ["exm1r", 0.232, -0.872, 0.322, {"afterFireAudioCoef": 1.0, "afterFireVisualCoef": 1.0, "afterFireVolumeCoef": 1.0, "afterFireMufflingCoef": 1.0, "exhaustAudioMufflingCoef": 1.0, "exhaustAudioGainChange": 0}],
+        ["exm1r", 0.232, -0.872, 0.322, {"afterFireAudioCoef": 0.75, "afterFireVisualCoef": 1.0, "afterFireVolumeCoef": 1.0, "afterFireMufflingCoef": 1.0, "exhaustAudioMufflingCoef": 1.0, "exhaustAudioGainChange": 0}],
         {"group": ""}
     ],
     "beams": [

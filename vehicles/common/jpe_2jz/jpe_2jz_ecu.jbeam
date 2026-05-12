@@ -13,7 +13,7 @@
         "particulates":0.01,
         "afterFireAudibleThresholdInstant": 5000,
         "afterFireAudibleThresholdShift": 5000,        
-        "afterFireAudibleThresholdsustained": 7000,        
+        "afterFireAudibleThresholdSustained": 7000,        
         "exhaustFlameSizeCoef":1.5,
         "exhaustFlameColorCoef":1.25
     },
@@ -45,7 +45,7 @@
         "particulates":0.01,
         "afterFireAudibleThresholdInstant": 5000,
         "afterFireAudibleThresholdShift": 5000,        
-        "afterFireAudibleThresholdsustained": 7000,  
+        "afterFireAudibleThresholdSustained": 7000,  
         "exhaustFlameSizeCoef":1.5,
         "exhaustFlameColorCoef":1.25
     },
@@ -91,7 +91,7 @@
         "particulates":0.015,
         "afterFireAudibleThresholdInstant": 5000,
         "afterFireAudibleThresholdShift": 5000,        
-        "afterFireAudibleThresholdsustained": 7000,          
+        "afterFireAudibleThresholdSustained": 7000,          
         "exhaustFlameSizeCoef":2.0,
         "exhaustFlameColorCoef":1.35
     },

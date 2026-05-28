@@ -690,6 +690,7 @@ local function updateTorque(device, dt)
   local engineAV = device.outputAV1
 
   local throttle = (electrics.values[device.electricsThrottleName] or 0) * (electrics.values[device.electricsThrottleFactorName] or device.throttleFactor)
+  local driverThrottle = throttle
 
   
   device.idleAVTimer = device.idleAVTimer + dt -- ZEIT EDIT
@@ -774,8 +775,9 @@ local function updateTorque(device, dt)
   device.lastOutputAV1 = device.outputAV1
 
   local dLoad = min((device.instantEngineLoad - lastInstantEngineLoad) / dt, 0)
-  local instantAfterFire = engineAV > device.idleAV * 2 and max(device.instantAfterFireCoef * -dLoad * lastInstantEngineLoad * absEngineAV, 0) or 0
-  local sustainedAfterFire = (device.instantEngineLoad <= 0 and device.sustainedAfterFireTimer > 0) and max(engineAV * device.sustainedAfterFireCoef, 0) or 0
+  local afterFireAllowed = driverThrottle <= 0.05 or ignitionCut
+  local instantAfterFire = afterFireAllowed and engineAV > device.idleAV * 2 and max(device.instantAfterFireCoef * -dLoad * lastInstantEngineLoad * absEngineAV, 0) or 0
+  local sustainedAfterFire = afterFireAllowed and (device.instantEngineLoad <= 0 and device.sustainedAfterFireTimer > 0) and max(engineAV * device.sustainedAfterFireCoef, 0) or 0
 
   device.instantAfterFireFuel = device.instantAfterFireFuel + instantAfterFire
   device.sustainedAfterFireFuel = device.sustainedAfterFireFuel + sustainedAfterFire

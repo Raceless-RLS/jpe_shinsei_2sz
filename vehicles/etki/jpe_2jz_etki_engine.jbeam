@@ -58,19 +58,19 @@
         "requiredEnergyType":"gasoline",
 
         //exhaust
-        "instantAfterFireSound": "event:>Vehicle>Afterfire>i5_01>single",
-        "sustainedAfterFireSound": "event:>Vehicle>Afterfire>i5_01>multi",
-        "shiftAfterFireSound": "event:>Vehicle>Afterfire>i5_01>shift",
+        "instantAfterFireSound": "event:>Vehicle>Afterfire>i6_01>single",
+        "sustainedAfterFireSound": "event:>Vehicle>Afterfire>i6_01>multi",
+        "shiftAfterFireSound": "event:>Vehicle>Afterfire>i6_01>shift",
         "particulates":0.015,
         "afterFireAudibleThresholdInstant": 5000,
-        "instantAfterFireCoef": 0.75,
+        "instantAfterFireCoef": 0.45,
         "instantAfterFireVolumeCoef": 1.75,
         "afterFireAudibleThresholdShift": 5000,
         "shiftAfterFireVolumeCoef": 2.0,
         "afterFireAudibleThresholdSustained": 7000,
-        "sustainedAfterFireCoef": 0.9,
+        "sustainedAfterFireCoef": 0.45,
         "sustainedAfterFireTime": 0.8,
-        "sustainedAfterFireVolumeCoef": 0.85,	
+        "sustainedAfterFireVolumeCoef": 0.7,	
 
         //cooling and oil system
         "thermalsEnabled":true,

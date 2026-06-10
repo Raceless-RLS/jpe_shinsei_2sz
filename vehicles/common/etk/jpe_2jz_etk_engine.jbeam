@@ -1,24 +1,11 @@
 {
-"jpe_2jz_etk_engine_main": {
+"jpe_2jz_etk_engine_800": {
     "information":{
         "authors":"Jefe/JPE",
-        "name":"3.0L Shinsei 2SZ-GTE Engine",
+        "name":"3.0L Shinsei 2SZ-GTE (800 Series)",
         "value":0,
     },
     "slotType" : "etk_engine",
-	"slots": [
-        ["type", "default", "description"],
-        ["jpe_2jz_etk_engine_type","","Body Type"],
-		
-    ],
-},
-"jpe_2jz_etk800_engine": {
-    "information":{
-        "authors":"Jefe/JPE",
-        "name":"ETK-800",
-        "value":3500,
-    },
-    "slotType" : "jpe_2jz_etk_engine_type",
     "slots": [
         ["type", "default", "description"],
         ["etk800_jpe_2jz_bottom_end","etk800_jpe_2jz_bottom_end", "Engine Bottom End", {"coreSlot":true}],
@@ -71,19 +58,19 @@
         "requiredEnergyType":"gasoline",
 
         //exhaust
-        "instantAfterFireSound": "event:>Vehicle>Afterfire>i5_01>single",
-        "sustainedAfterFireSound": "event:>Vehicle>Afterfire>i5_01>multi",
-        "shiftAfterFireSound": "event:>Vehicle>Afterfire>i5_01>shift",
+        "instantAfterFireSound": "event:>Vehicle>Afterfire>i6_01>single",
+        "sustainedAfterFireSound": "event:>Vehicle>Afterfire>i6_01>multi",
+        "shiftAfterFireSound": "event:>Vehicle>Afterfire>i6_01>shift",
         "particulates":0.015,
         "afterFireAudibleThresholdInstant": 5000,
-        "instantAfterFireCoef": 1.0,
+        "instantAfterFireCoef": 0.45,
         "instantAfterFireVolumeCoef": 1.75,
         "afterFireAudibleThresholdShift": 5000,
         "shiftAfterFireVolumeCoef": 2.0,
         "afterFireAudibleThresholdSustained": 7000,
-        "sustainedAfterFireCoef": 0.9,
+        "sustainedAfterFireCoef": 0.45,
         "sustainedAfterFireTime": 0.8,
-        "sustainedAfterFireVolumeCoef": 0.85,	
+        "sustainedAfterFireVolumeCoef": 0.7,
 
         //cooling and oil system
         "thermalsEnabled":true,
@@ -326,13 +313,13 @@
             {"triangleType":"NORMALTYPE"},
     ],
 },
-"jpe_2jz_etkc_engine": {
+"jpe_2jz_etk_engine_k": {
     "information":{
         "authors":"Jefe/JPE",
-        "name":"ETK-C",
-        "value":3500,
+        "name":"3.0L Shinsei 2SZ-GTE (K Series)",
+        "value":0,
     },
-    "slotType" : "jpe_2jz_etk_engine_type",
+    "slotType" : "etk_engine",
     "slots": [
         ["type", "default", "description"],
         ["etk800_jpe_2jz_bottom_end","etk800_jpe_2jz_bottom_end", "Engine Bottom End", {"coreSlot":true}],
@@ -385,19 +372,19 @@
         "requiredEnergyType":"gasoline",
 
         //exhaust
-        "instantAfterFireSound": "event:>Vehicle>Afterfire>i5_01>single",
-        "sustainedAfterFireSound": "event:>Vehicle>Afterfire>i5_01>multi",
-        "shiftAfterFireSound": "event:>Vehicle>Afterfire>i5_01>shift",
+        "instantAfterFireSound": "event:>Vehicle>Afterfire>i6_01>single",
+        "sustainedAfterFireSound": "event:>Vehicle>Afterfire>i6_01>multi",
+        "shiftAfterFireSound": "event:>Vehicle>Afterfire>i6_01>shift",
         "particulates":0.015,
         "afterFireAudibleThresholdInstant": 5000,
-        "instantAfterFireCoef": 1.0,
+        "instantAfterFireCoef": 0.45,
         "instantAfterFireVolumeCoef": 1.75,
         "afterFireAudibleThresholdShift": 5000,
         "shiftAfterFireVolumeCoef": 2.0,
         "afterFireAudibleThresholdSustained": 7000,
-        "sustainedAfterFireCoef": 0.9,
+        "sustainedAfterFireCoef": 0.45,
         "sustainedAfterFireTime": 0.8,
-        "sustainedAfterFireVolumeCoef": 0.85,	
+        "sustainedAfterFireVolumeCoef": 0.7,
 
         //cooling and oil system
         "thermalsEnabled":true,

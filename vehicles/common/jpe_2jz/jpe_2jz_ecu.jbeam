@@ -9,7 +9,7 @@
     "mainEngine":{
         "revLimiterRPM":7200,
         "revLimiterType":"timeBased",
-        "revLimiterCutTime":0.11,
+        "revLimiterCutTime":0.09,
         "particulates":0.01,
         "afterFireAudibleThresholdInstant": 5000,
         "afterFireAudibleThresholdShift": 5000,        
@@ -34,14 +34,11 @@
         ["$revLimiterRPM", "range", "rpm", "Engine", 7800, 7200, 8500, "RPM Limit", "RPM where the rev limiter prevents further revving", {"stepDis":50}],
         ["$boostTarget", "range", "psi", "Turbo", 18, 0, 35, "Boost Pressure", "Target turbo boost pressure", {"stepDis":0.5}]
     ],
-        "controller": [
-        ["fileName"],
-        ["twoStepLaunch", {"rpmLimit":"$twoStepRPM"}]
-    ],
+
     "mainEngine":{
         "revLimiterRPM":"$revLimiterRPM",
         "revLimiterType":"timeBased",
-        "revLimiterCutTime":0.10,
+        "revLimiterCutTime":0.08,
         "particulates":0.01,
         "afterFireAudibleThresholdInstant": 5000,
         "afterFireAudibleThresholdShift": 5000,        
@@ -69,7 +66,7 @@
         ["$idleRPMTarget", "range", "rpm", "Engine", 950, 700, 1400, "Idle RPM", "Target engine idle speed", {"stepDis":25}],
         ["$twoStepRPM", "range", "rpm", "Engine", 3200, 1800, 6000, "2-Step RPM", "Launch control RPM limit", {"stepDis":50}],
         ["$revLimiterRPM", "range", "rpm", "Engine", 8500, 5500, 10000, "RPM Limit", "RPM where the rev limiter prevents further revving", {"stepDis":50}],
-        ["$revLimiterCutTime", "range", "s", "Engine", 0.095, 0.01, 0.5, "RPM Limit Cut Time", "How fast the rev limiter cycles", {"stepDis":0.001}],
+        ["$revLimiterCutTime", "range", "s", "Engine", 0.085, 0.01, 0.5, "RPM Limit Cut Time", "How fast the rev limiter cycles", {"stepDis":0.001}],
         ["$gear1", "range", "psi", "Turbo", 20, 0, 80, "Boost 1st Gear", "Max boost in 1st gear", {"stepDis":0.5}],
         ["$gear2", "range", "psi", "Turbo", 25, 0, 80, "Boost 2nd Gear", "Max boost in 2nd gear", {"stepDis":0.5}],
         ["$gear3", "range", "psi", "Turbo", 30, 0, 80, "Boost 3rd Gear", "Max boost in 3rd gear", {"stepDis":0.5}],

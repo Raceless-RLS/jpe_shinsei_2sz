@@ -666,7 +666,20 @@
     "slots": [
         ["type", "default", "description"],
         ["etk800_jpe_2jz_engine_cover","etk800_jpe_2jz_engine_cover_s", "Engine Cover Style"],		
-        ["etk800_jpe_2jz_cam_pulley","etk_jpe_2jz_cam_pulley_main", "Cam Pulleys", {"coreSlot":true}]	
+        ["etk800_jpe_2jz_cam_pulley","etk800_jpe_2jz_cam_pulley_main", "Cam Pulleys", {"coreSlot":true}]	
+	 ],
+},
+"etkc_jpe_2jz_engine_cover_main": {
+    "information":{
+        "authors":"Jefe/JPE",
+        "name":"Engine Cover ",
+        "value":0,
+    },
+    "slotType" : "etkc_jpe_2jz_engine_cover_main",
+    "slots": [
+        ["type", "default", "description"],
+        ["etkc_jpe_2jz_engine_cover","etk800_jpe_2jz_engine_cover_s", "Engine Cover Style"],		
+        ["etkc_jpe_2jz_cam_pulley","etkc_jpe_2jz_cam_pulley_main", "Cam Pulleys", {"coreSlot":true}]	
 	 ],
 },
 "etk800_jpe_2jz_engine_cover_s": {
@@ -721,7 +734,7 @@
         {"deformGroup":""},
     ],
 },
-"etk_jpe_2jz_cam_pulley_main": {
+"etk800_jpe_2jz_cam_pulley_main": {
     "information":{
         "authors":"Jefe/JPE",
         "name":"Cam Pulleys",
@@ -734,13 +747,13 @@
 		
     ],
 },
-"etk_jpe_2jz_cam_pulley_main": {
+"etkc_jpe_2jz_cam_pulley_main": {
     "information":{
         "authors":"Jefe/JPE",
         "name":"Cam Pulleys",
         "value":0,
     },
-    "slotType" : "etk800_jpe_2jz_cam_pulley",
+    "slotType" : "etkc_jpe_2jz_cam_pulley",
 	"slots": [
         ["type", "default", "description"],
         ["etk800_jpe_2jz_cam_pulley_typekc","etk_jpe_2jz_cam_pulley_skc","Cam Pulley Style", {"coreSlot":true}],

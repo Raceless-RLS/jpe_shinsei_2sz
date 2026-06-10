@@ -36,7 +36,7 @@
     "mainEngine":{
         "revLimiterRPM":"$revLimiterRPM",
         "revLimiterType":"timeBased",
-        "revLimiterCutTime":0.10,
+        "revLimiterCutTime":0.08,
         "$*instantAfterFireCoef": 1.10,
         "$*sustainedAfterFireCoef": 1.05,
         "particulates":0.01,

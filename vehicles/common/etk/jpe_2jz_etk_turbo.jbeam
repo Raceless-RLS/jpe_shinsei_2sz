@@ -24,7 +24,7 @@
         ["etk800_jpe_2jz_intake_manifold","etk800_jpe_2jz_turbo_type_twin", "Intake Manifold", {"coreSlot":true}]
     ],
 },
-"etk_jpe_2jz_aspiration_main": {
+"etkc_jpe_2jz_aspiration_main": {
     "information":{
         "authors":"Jefe/JPE",
         "name":"Turbocharger",
@@ -46,7 +46,7 @@
     "slots": [
         ["type", "default", "description"],
         ["jpe_2jz_turbocharger_twin", "jpe_2jz_turbo_core_stock", "Turbocharger", {"coreSlot": true}],
-        ["etk_exhaust_i6_3.0_petrol", "jpe_2jz_etk_exhaust_main_A", "Exhaust System"],		
+        ["etk_exhaust_i6_3.0_petrol", "jpe_2jz_etk_exhaust_main800", "Exhaust System"],		
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -147,7 +147,7 @@
     "slots": [
         ["type", "default", "description"],
         ["jpe_2jz_turbocharger_single", "jpe_2jz_turbo_core_stage1", "Turbocharger", {"coreSlot": true}],
-        ["etk_exhaust_i6_3.0_petrol", "jpe_2jz_etk_exhaust_main_A", "Exhaust System"],
+        ["etk_exhaust_i6_3.0_petrol", "jpe_2jz_etk_exhaust_main800", "Exhaust System"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -251,7 +251,7 @@
     "slots": [
         ["type", "default", "description"],
         ["jpe_2jz_turbocharger_twin", "jpe_2jz_turbo_core_stock", "Turbocharger", {"coreSlot": true}],
-        ["etk_exhaust_i6_3.0_petrol", "jpe_2jz_etk_exhaust_main_A", "Exhaust System"],		
+        ["etk_exhaust_i6_3.0_petrol", "jpe_2jz_etk_exhaust_maink", "Exhaust System"],		
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],
@@ -352,7 +352,7 @@
     "slots": [
         ["type", "default", "description"],
         ["jpe_2jz_turbocharger_single", "jpe_2jz_turbo_core_stage1", "Turbocharger", {"coreSlot": true}],
-        ["etk_exhaust_i6_3.0_petrol", "jpe_2jz_etk_exhaust_main_A", "Exhaust System"],
+        ["etk_exhaust_i6_3.0_petrol", "jpe_2jz_etk_exhaust_maink", "Exhaust System"],
     ],
     "flexbodies": [
         ["mesh", "[group]:", "nonFlexMaterials"],

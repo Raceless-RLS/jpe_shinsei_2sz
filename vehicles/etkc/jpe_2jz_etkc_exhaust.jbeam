@@ -1,11 +1,11 @@
-{
-"jpe_2jz_etk_exhaust_main": {
+{   
+"jpe_2jz_etk_exhaust_maink": {
     "information":{
         "authors":"Jefe/JPE",
-        "name":"ETK-C Exhaust Systems",
+        "name":"Shinsei 2SZ Exhaust Systems (K Series)",
         "value":0,
     },
-    "slotType" : "etk_exhaust_jpe_2jz",
+    "slotType" : "etk_exhaust_i6_3.0_petrol",
 	"slots": [
         ["type", "default", "description"],
         ["etkc_exhaust_jpe_2jz","jpe_2jz_etkc_exhaust","Exhaust Type", {"coreSlot":true}],

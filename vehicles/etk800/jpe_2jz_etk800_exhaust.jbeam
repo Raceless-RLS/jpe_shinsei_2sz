@@ -1,24 +1,11 @@
 {
-"jpe_2jz_etk_exhaust_main_A": {
+"jpe_2jz_etk_exhaust_main800": {
     "information":{
         "authors":"Jefe/JPE",
-        "name":"Shinsei 2SZ Exhaust Systems",
+        "name":"Shinsei 2SZ Exhaust Systems (800 Series)",
         "value":0,
     },
     "slotType" : "etk_exhaust_i6_3.0_petrol",
-	"slots": [
-        ["type", "default", "description"],
-        ["etk_exhaust_jpe_2jz","jpe_2jz_etk_exhaust_main","Body Style", {"coreSlot":true}],
-		
-    ],
-},
-"jpe_2jz_etk_exhaust_main": {
-    "information":{
-        "authors":"Jefe/JPE",
-        "name":"ETK-800 Exhaust Systems",
-        "value":0,
-    },
-    "slotType" : "etk_exhaust_jpe_2jz",
 	"slots": [
         ["type", "default", "description"],
         ["etk800_exhaust_jpe_2jz","jpe_2jz_etk800_exhaust","Exhaust Type", {"coreSlot":true}],
